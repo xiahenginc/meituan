@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        _setupProxy()
         return true
     }
 
@@ -41,6 +42,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func _setupProxy(){
+//        WebViewProxy.handleRequestsWithHost("localperson", handler: {
+//            (req:NSURLRequest!,res:WVPResponse! )-> Void in
+//            //            //http://local/cbjy.htm#__webviewproxyreq__
+//            var uriid = self.getSubString(req.URLString,starts: "/",ends: ".htm")
+//            println(uriid)
+//            dispatch_sync(dispatch_get_main_queue(), {
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
+//                    })
+//                    
+//                    return
+//                default:
+//                    title = "个人信息"
+//                }
+//                navto_webinfo_nofooter_personal(uriid,title)
+//            })
+//        })
+    }
 }
 
