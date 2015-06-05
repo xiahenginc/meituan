@@ -18,7 +18,7 @@ class WebPageViewController: UIViewController {
         webView.loadRequest(request)
     }
     var url = ""
-    var level = 0
+    var level = 1
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

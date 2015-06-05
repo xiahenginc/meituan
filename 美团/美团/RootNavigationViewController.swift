@@ -42,6 +42,16 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
     func navigationController(navigationController: UINavigationController,
         willShowViewController viewController: UIViewController,
         animated: Bool){
+            if(viewController is TabIndexTuangouViewController
+            || viewController is TabIndexShangjiaViewController
+            || viewController is TabIndexWodeViewController
+            || viewController is TabIndexGengduoViewController
+                ){
+                    self.navigationBarHidden = true
+//                    viewController.navigationItem.leftBarButtonItem = nil
+//                    viewController.navigationItem.hidesBackButton = true
+//                    viewController.navigationItem.rightBarButtonItem = nil
+            }
             if(viewController is WebPageViewController){
                 let vc = viewController as! WebPageViewController
                 if(self.navigationBarHidden){
