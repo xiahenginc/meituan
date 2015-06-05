@@ -15,21 +15,30 @@ class MyUITabBarController: UITabBarController {
 
         self.tabBar.barTintColor  = UIColor.colorWithHex("#213F7F")
 
-        var vc0 = self.storyboard?.instantiateViewControllerWithIdentifier("nav") as! RootNavigationViewController
-        var vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("nav") as! RootNavigationViewController
-        var vc2 = self.storyboard?.instantiateViewControllerWithIdentifier("nav") as! RootNavigationViewController
+        var vcs = Array<RootNavigationViewController>()
         
-        vc0.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"ic_nav_home_normal"), selectedImage:UIImage(named:"ic_nav_home_active"))
-        vc1.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"ic_nav_opinion_normal"), selectedImage:UIImage(named:"ic_nav_opinion_active"))
-        vc2.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:"ic_nav_me_normal"), selectedImage:UIImage(named:"ic_nav_me_active"))
+        var vc0 = self.storyboard?.instantiateViewControllerWithIdentifier("indextuangou") as! TabIndexTuangouViewController
+        var vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("indexshangjia") as! TabIndexShangjiaViewController
+        var vc2 = self.storyboard?.instantiateViewControllerWithIdentifier("indexwode") as! TabIndexWodeViewController
+        var vc3 = self.storyboard?.instantiateViewControllerWithIdentifier("indexgengduo") as! TabIndexGengduoViewController
         
-        var vcs:Array<RootNavigationViewController> = [vc0,vc1,vc2]
-        let arraytilte = ["首页按钮","第二个按钮","第三个按钮"]
-        for var i = 0 ;i < vcs.count ; i++ {
-            vcs[i].tabindex = i
-            vcs[i].title = arraytilte[i]
-        }
+        var vcViews = [vc0,vc1,vc2,vc3]
+        var imgs = ["ic_nav_home_normal","ic_nav_opinion_normal","ic_nav_me_normal","ic_nav_me_normal"]
+        var imgssel = ["ic_nav_home_normal","ic_nav_opinion_normal","ic_nav_me_normal","ic_nav_me_normal"]
+        let arraytilte = ["团购","商家","我的","更多"]
+      
+        var i = 0
+        for vc in vcViews{
+            var vcnav = RootNavigationViewController(rootViewController: vc)
+            
+            vcnav.tabBarItem = UITabBarItem(title:nil,image:UIImage(named:imgs[i]), selectedImage:UIImage(named:imgssel[i]))
+            vcnav.title = arraytilte[i]
+            i++
+            vcs.append(vcnav)
 
+        }
+        
+        
         self.viewControllers = vcs
     }
 

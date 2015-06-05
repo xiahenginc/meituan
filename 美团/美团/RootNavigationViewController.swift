@@ -16,8 +16,8 @@ var globals_attributes = [
 
 class RootNavigationViewController: UINavigationController ,UINavigationControllerDelegate{
 
-    let arraytilte = ["首页标题","第二个标题","第三个标题"]
-    let arrayurl = ["http://i.meituan.com/","http://i.meituan.com/jiudian/touch/poi_prepose?stid=_b1&cevent=imt%2Fhomepage%2Fcategory1%2F20","http://i.meituan.com/nanjing?cid=10&stid=_b1&cateType=poi"]
+//    let arraytilte = ["首页标题","第二个标题","第三个标题"]
+//    let arrayurl = ["http://i.meituan.com/","http://i.meituan.com/jiudian/touch/poi_prepose?stid=_b1&cevent=imt%2Fhomepage%2Fcategory1%2F20","http://i.meituan.com/nanjing?cid=10&stid=_b1&cateType=poi"]
     
     var tabindex = 0
     override func viewDidLoad() {
@@ -26,12 +26,12 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
         self.navigationBar.barTintColor = UIColor.colorWithHex("#1984c8")
         
         self.navigationBar.titleTextAttributes = globals_attributes
-        if(self.viewControllers[0] is WebPageViewController){
-            let vc = self.viewControllers[0] as! WebPageViewController
-            vc.url = arrayurl[tabindex]
-            vc.title = arraytilte[tabindex]
-        }
-        
+//        if(self.viewControllers[0] is WebPageViewController){
+//            let vc = self.viewControllers[0] as! WebPageViewController
+//            vc.url = arrayurl[tabindex]
+//            vc.title = arraytilte[tabindex]
+//        }
+//        
     }
 
     override func didReceiveMemoryWarning() {

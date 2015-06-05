@@ -41,6 +41,146 @@
             </objects>
             <point key="canvasLocation" x="1894" y="302"/>
         </scene>
+        <!--团购-->
+        <scene sceneID="hQq-To-hbl">
+            <objects>
+                <viewController storyboardIdentifier="indextuangou" title="团购" id="rfC-dV-n6P" userLabel="团购" customClass="TabIndexTuangouViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mKc-s2-mV3"/>
+                        <viewControllerLayoutGuide type="bottom" id="on1-Wt-adS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Ex-7X-nSd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yg3-Eu-Hjh">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="leading" secondItem="8Ex-7X-nSd" secondAttribute="leading" id="Fx9-Wq-1nB"/>
+                            <constraint firstAttribute="trailing" secondItem="yg3-Eu-Hjh" secondAttribute="trailing" id="jUs-Zc-iQu"/>
+                            <constraint firstAttribute="centerX" secondItem="yg3-Eu-Hjh" secondAttribute="centerX" id="jzh-6l-CSe"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="mKc-s2-mV3" secondAttribute="top" id="lmB-2E-Sw8"/>
+                            <constraint firstAttribute="bottom" secondItem="yg3-Eu-Hjh" secondAttribute="bottom" id="pe2-Lk-vMo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="m86-9Y-R1r"/>
+                    <connections>
+                        <outlet property="webView" destination="yg3-Eu-Hjh" id="GQ1-zW-u9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVJ-NC-SjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="302"/>
+        </scene>
+        <!--商家-->
+        <scene sceneID="bzT-Io-DRy">
+            <objects>
+                <viewController storyboardIdentifier="indexshangjia" title="商家" id="NYS-s9-0av" userLabel="商家" customClass="TabIndexShangjiaViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Va-QS-hVJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="RaW-oy-O7D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HNm-6K-LKm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aes-ze-FaH">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="leading" secondItem="HNm-6K-LKm" secondAttribute="leading" id="07F-zg-zhr"/>
+                            <constraint firstAttribute="centerX" secondItem="aes-ze-FaH" secondAttribute="centerX" id="8n5-ys-Cty"/>
+                            <constraint firstAttribute="bottom" secondItem="aes-ze-FaH" secondAttribute="bottom" id="Due-h7-oKm"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="0Va-QS-hVJ" secondAttribute="top" id="Kc8-YS-Vgu"/>
+                            <constraint firstAttribute="trailing" secondItem="aes-ze-FaH" secondAttribute="trailing" id="PqX-Ld-MJ3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Q5-3U-IVw"/>
+                    <connections>
+                        <outlet property="webView" destination="aes-ze-FaH" id="8yV-hh-Miz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjk-8b-zIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="302"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="Ehj-mj-oJr">
+            <objects>
+                <viewController storyboardIdentifier="indexwode" title="我的" id="EQi-00-QDk" userLabel="我的" customClass="TabIndexWodeViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CNt-qW-Lkh"/>
+                        <viewControllerLayoutGuide type="bottom" id="WPr-nH-l8U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RA4-ZW-7b8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rM4-E5-x57">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="leading" secondItem="RA4-ZW-7b8" secondAttribute="leading" id="BtX-kq-I5I"/>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="top" secondItem="CNt-qW-Lkh" secondAttribute="top" id="HHI-fY-Eq2"/>
+                            <constraint firstAttribute="trailing" secondItem="rM4-E5-x57" secondAttribute="trailing" id="gwA-FS-He9"/>
+                            <constraint firstAttribute="bottom" secondItem="rM4-E5-x57" secondAttribute="bottom" id="sry-Dl-JKp"/>
+                            <constraint firstAttribute="centerX" secondItem="rM4-E5-x57" secondAttribute="centerX" id="zCe-Fh-yYI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FVN-MA-qsF"/>
+                    <connections>
+                        <outlet property="webView" destination="rM4-E5-x57" id="0k1-JM-6rN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxi-DN-5Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="302"/>
+        </scene>
+        <!--团购-->
+        <scene sceneID="6hj-pE-Awo">
+            <objects>
+                <viewController storyboardIdentifier="indexgengduo" title="更多" id="92N-Z8-fLA" userLabel="团购" customClass="TabIndexGengduoViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J88-IQ-7na"/>
+                        <viewControllerLayoutGuide type="bottom" id="D8c-Be-cve"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u2s-kE-ws8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiH-ex-D3h">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WiH-ex-D3h" secondAttribute="bottom" id="WW6-Tz-RTR"/>
+                            <constraint firstItem="WiH-ex-D3h" firstAttribute="top" secondItem="J88-IQ-7na" secondAttribute="top" id="eh8-VJ-Vsi"/>
+                            <constraint firstItem="WiH-ex-D3h" firstAttribute="leading" secondItem="u2s-kE-ws8" secondAttribute="leading" id="hp6-PG-hXr"/>
+                            <constraint firstAttribute="centerX" secondItem="WiH-ex-D3h" secondAttribute="centerX" id="v74-eh-ecT"/>
+                            <constraint firstAttribute="trailing" secondItem="WiH-ex-D3h" secondAttribute="trailing" id="xkt-37-RED"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mEA-kw-tAS"/>
+                    <connections>
+                        <outlet property="webView" destination="WiH-ex-D3h" id="EM0-M0-Ca5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3P-YP-rVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="302"/>
+        </scene>
         <!--详情网页-->
         <scene sceneID="LZ9-oP-jmb">
             <objects>
@@ -100,9 +240,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Uou-eU-iEN" kind="relationship" relationship="rootViewController" id="0CB-Py-rrH"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftZ-Dc-dHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
