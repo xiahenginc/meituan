@@ -17,7 +17,7 @@ class TabIndexWodeViewController: UIViewController {
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
-    var url = "http://i.meituan.com/"
+    var url = "http://www.baidu.com/"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

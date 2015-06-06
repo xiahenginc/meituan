@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--主页网页-->
@@ -60,12 +61,43 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="leading" secondItem="8Ex-7X-nSd" secondAttribute="leadingMargin" constant="-16" id="67q-g3-gtp"/>
+                            <constraint firstAttribute="trailing" secondItem="yg3-Eu-Hjh" secondAttribute="trailing" id="8Kv-sE-agV"/>
                             <constraint firstItem="yg3-Eu-Hjh" firstAttribute="leading" secondItem="8Ex-7X-nSd" secondAttribute="leading" id="Fx9-Wq-1nB"/>
+                            <constraint firstItem="on1-Wt-adS" firstAttribute="top" secondItem="yg3-Eu-Hjh" secondAttribute="bottom" id="Mnl-uz-pZo"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="8Ex-7X-nSd" secondAttribute="top" constant="20" id="O1N-m3-q6F"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="leading" secondItem="8Ex-7X-nSd" secondAttribute="leading" id="W6g-oI-6uK"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="mKc-s2-mV3" secondAttribute="bottom" constant="20" id="dRy-Hs-i5M"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="mKc-s2-mV3" secondAttribute="bottom" id="dyS-Hq-IXl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yg3-Eu-Hjh" secondAttribute="trailing" constant="-16" id="e1y-Qy-mTq"/>
                             <constraint firstAttribute="trailing" secondItem="yg3-Eu-Hjh" secondAttribute="trailing" id="jUs-Zc-iQu"/>
+                            <constraint firstItem="on1-Wt-adS" firstAttribute="top" secondItem="yg3-Eu-Hjh" secondAttribute="bottom" id="jjf-Ek-gSQ"/>
                             <constraint firstAttribute="centerX" secondItem="yg3-Eu-Hjh" secondAttribute="centerX" id="jzh-6l-CSe"/>
                             <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="mKc-s2-mV3" secondAttribute="top" id="lmB-2E-Sw8"/>
+                            <constraint firstAttribute="bottom" secondItem="yg3-Eu-Hjh" secondAttribute="bottom" id="mZJ-82-uwx"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="top" secondItem="mKc-s2-mV3" secondAttribute="bottom" id="otY-rN-MM0"/>
                             <constraint firstAttribute="bottom" secondItem="yg3-Eu-Hjh" secondAttribute="bottom" id="pe2-Lk-vMo"/>
+                            <constraint firstAttribute="trailing" secondItem="yg3-Eu-Hjh" secondAttribute="trailing" id="xqt-1Q-Hov"/>
+                            <constraint firstItem="yg3-Eu-Hjh" firstAttribute="leading" secondItem="8Ex-7X-nSd" secondAttribute="leading" id="zv1-gh-ZgP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="67q-g3-gtp"/>
+                                <exclude reference="8Kv-sE-agV"/>
+                                <exclude reference="Fx9-Wq-1nB"/>
+                                <exclude reference="W6g-oI-6uK"/>
+                                <exclude reference="dRy-Hs-i5M"/>
+                                <exclude reference="dyS-Hq-IXl"/>
+                                <exclude reference="e1y-Qy-mTq"/>
+                                <exclude reference="jUs-Zc-iQu"/>
+                                <exclude reference="jzh-6l-CSe"/>
+                                <exclude reference="lmB-2E-Sw8"/>
+                                <exclude reference="otY-rN-MM0"/>
+                                <exclude reference="pe2-Lk-vMo"/>
+                                <exclude reference="Mnl-uz-pZo"/>
+                                <exclude reference="jjf-Ek-gSQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="m86-9Y-R1r"/>
                     <connections>
@@ -96,11 +128,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aes-ze-FaH" firstAttribute="leading" secondItem="HNm-6K-LKm" secondAttribute="leading" id="07F-zg-zhr"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="HNm-6K-LKm" secondAttribute="top" constant="20" id="8Ll-KF-guZ"/>
                             <constraint firstAttribute="centerX" secondItem="aes-ze-FaH" secondAttribute="centerX" id="8n5-ys-Cty"/>
                             <constraint firstAttribute="bottom" secondItem="aes-ze-FaH" secondAttribute="bottom" id="Due-h7-oKm"/>
                             <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="0Va-QS-hVJ" secondAttribute="top" id="Kc8-YS-Vgu"/>
+                            <constraint firstAttribute="trailing" secondItem="aes-ze-FaH" secondAttribute="trailing" id="MR2-Tt-O20"/>
                             <constraint firstAttribute="trailing" secondItem="aes-ze-FaH" secondAttribute="trailing" id="PqX-Ld-MJ3"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="leading" secondItem="HNm-6K-LKm" secondAttribute="leading" id="jIw-0y-ns2"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="0Va-QS-hVJ" secondAttribute="bottom" constant="20" id="kfK-jc-zoe"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="0Va-QS-hVJ" secondAttribute="bottom" constant="20" id="mq9-vc-NV3"/>
+                            <constraint firstAttribute="bottom" secondItem="aes-ze-FaH" secondAttribute="bottom" id="s6u-Qc-9FI"/>
+                            <constraint firstItem="aes-ze-FaH" firstAttribute="top" secondItem="0Va-QS-hVJ" secondAttribute="bottom" constant="20" id="wL9-LK-ts7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="07F-zg-zhr"/>
+                                <exclude reference="8n5-ys-Cty"/>
+                                <exclude reference="Due-h7-oKm"/>
+                                <exclude reference="Kc8-YS-Vgu"/>
+                                <exclude reference="PqX-Ld-MJ3"/>
+                                <exclude reference="kfK-jc-zoe"/>
+                                <exclude reference="mq9-vc-NV3"/>
+                                <exclude reference="wL9-LK-ts7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="8Q5-3U-IVw"/>
                     <connections>
@@ -130,12 +181,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="leading" secondItem="RA4-ZW-7b8" secondAttribute="leading" id="8HR-8d-tYy"/>
                             <constraint firstItem="rM4-E5-x57" firstAttribute="leading" secondItem="RA4-ZW-7b8" secondAttribute="leading" id="BtX-kq-I5I"/>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="leading" secondItem="RA4-ZW-7b8" secondAttribute="leadingMargin" constant="-16" id="ChS-gK-fOv"/>
                             <constraint firstItem="rM4-E5-x57" firstAttribute="top" secondItem="CNt-qW-Lkh" secondAttribute="top" id="HHI-fY-Eq2"/>
+                            <constraint firstItem="WPr-nH-l8U" firstAttribute="top" secondItem="rM4-E5-x57" secondAttribute="bottom" id="MR7-K6-GcF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rM4-E5-x57" secondAttribute="trailing" constant="-16" id="Z3g-WQ-UEV"/>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="top" secondItem="CNt-qW-Lkh" secondAttribute="bottom" id="dln-cS-8My"/>
                             <constraint firstAttribute="trailing" secondItem="rM4-E5-x57" secondAttribute="trailing" id="gwA-FS-He9"/>
+                            <constraint firstAttribute="trailing" secondItem="rM4-E5-x57" secondAttribute="trailing" id="jpk-AP-mmU"/>
                             <constraint firstAttribute="bottom" secondItem="rM4-E5-x57" secondAttribute="bottom" id="sry-Dl-JKp"/>
+                            <constraint firstItem="rM4-E5-x57" firstAttribute="top" secondItem="RA4-ZW-7b8" secondAttribute="top" constant="20" id="vHF-T9-Tax"/>
                             <constraint firstAttribute="centerX" secondItem="rM4-E5-x57" secondAttribute="centerX" id="zCe-Fh-yYI"/>
+                            <constraint firstAttribute="bottom" secondItem="rM4-E5-x57" secondAttribute="bottom" id="zKA-Sg-nAf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BtX-kq-I5I"/>
+                                <exclude reference="ChS-gK-fOv"/>
+                                <exclude reference="HHI-fY-Eq2"/>
+                                <exclude reference="Z3g-WQ-UEV"/>
+                                <exclude reference="dln-cS-8My"/>
+                                <exclude reference="gwA-FS-He9"/>
+                                <exclude reference="sry-Dl-JKp"/>
+                                <exclude reference="zCe-Fh-yYI"/>
+                                <exclude reference="MR7-K6-GcF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="FVN-MA-qsF"/>
                     <connections>
@@ -146,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1894" y="302"/>
         </scene>
-        <!--团购-->
+        <!--更多-->
         <scene sceneID="6hj-pE-Awo">
             <objects>
-                <viewController storyboardIdentifier="indexgengduo" title="更多" id="92N-Z8-fLA" userLabel="团购" customClass="TabIndexGengduoViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="indexgengduo" title="更多" id="92N-Z8-fLA" userLabel="更多" customClass="TabIndexGengduoViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J88-IQ-7na"/>
                         <viewControllerLayoutGuide type="bottom" id="D8c-Be-cve"/>
@@ -165,12 +237,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WiH-ex-D3h" firstAttribute="top" secondItem="u2s-kE-ws8" secondAttribute="top" constant="20" id="67x-Ly-Lrp"/>
+                            <constraint firstAttribute="bottom" secondItem="WiH-ex-D3h" secondAttribute="bottom" id="T5s-9l-6EW"/>
                             <constraint firstAttribute="bottom" secondItem="WiH-ex-D3h" secondAttribute="bottom" id="WW6-Tz-RTR"/>
                             <constraint firstItem="WiH-ex-D3h" firstAttribute="top" secondItem="J88-IQ-7na" secondAttribute="top" id="eh8-VJ-Vsi"/>
+                            <constraint firstAttribute="trailing" secondItem="WiH-ex-D3h" secondAttribute="trailing" id="gHC-ph-yEo"/>
                             <constraint firstItem="WiH-ex-D3h" firstAttribute="leading" secondItem="u2s-kE-ws8" secondAttribute="leading" id="hp6-PG-hXr"/>
+                            <constraint firstItem="WiH-ex-D3h" firstAttribute="leading" secondItem="u2s-kE-ws8" secondAttribute="leading" id="owh-5q-W4B"/>
                             <constraint firstAttribute="centerX" secondItem="WiH-ex-D3h" secondAttribute="centerX" id="v74-eh-ecT"/>
                             <constraint firstAttribute="trailing" secondItem="WiH-ex-D3h" secondAttribute="trailing" id="xkt-37-RED"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WW6-Tz-RTR"/>
+                                <exclude reference="eh8-VJ-Vsi"/>
+                                <exclude reference="hp6-PG-hXr"/>
+                                <exclude reference="v74-eh-ecT"/>
+                                <exclude reference="xkt-37-RED"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="mEA-kw-tAS"/>
                     <connections>
