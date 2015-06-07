@@ -47,10 +47,10 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
             || viewController is TabIndexWodeViewController
             || viewController is TabIndexGengduoViewController
                 ){
-                    self.navigationBarHidden = true
-//                    viewController.navigationItem.leftBarButtonItem = nil
-//                    viewController.navigationItem.hidesBackButton = true
-//                    viewController.navigationItem.rightBarButtonItem = nil
+                    self.navigationBarHidden = false
+                    viewController.navigationItem.leftBarButtonItem = nil
+                    viewController.navigationItem.hidesBackButton = true
+                    viewController.navigationItem.rightBarButtonItem = nil
             }
             if(viewController is WebPageViewController){
                 let vc = viewController as! WebPageViewController
