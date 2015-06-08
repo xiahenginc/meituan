@@ -16,7 +16,7 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
         var searchBar = UISearchBar()
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
-
+        searchBar.placeholder = "搜索商品，巴拉巴巴拉"
         
         loadurl(initurl)
     }
@@ -35,31 +35,40 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        println("Search btn clicked")
-        var searchtext = searchBar.text
-        doSearch(searchBar,searchtext:searchtext)
-        // keyboard.endEditing()
-    }
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar){
-         println("Search btn searchBarTextDidBeginEditing")
-        let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("webpageview") as! WebPageViewController
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool{
+        let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("searchindexview") as! SearchIndexViewController
         dvc.navigationController?.title = "搜索"
         dvc.url = "http://i.meituan.com/s/?cevent=imt%2Fhomepage%2Fsearch"
         self.navigationController?.pushViewController(dvc, animated: true)
+        return false
     }
+
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//        println("Search btn clicked")
+//        searchBar.resignFirstResponder()
+////        var searchtext = searchBar.text
+////        doSearch(searchBar,searchtext:searchtext)
+//        // keyboard.endEditing()
+//    }
+//    func searchBarTextDidBeginEditing(searchBar: UISearchBar){
+//         println("Search btn searchBarTextDidBeginEditing")
+//        let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("searchindexview") as! SearchIndexViewController
+//        dvc.navigationController?.title = "搜索"
+//        dvc.url = "http://i.meituan.com/s/?cevent=imt%2Fhomepage%2Fsearch"
+//        self.navigationController?.pushViewController(dvc, animated: true)
+//    }
     
-    func searchBar(searchBar: UISearchBar,textDidChange searchText: String){
-        
-        doSearch(searchBar,searchtext:searchText)
-    }
-    
-    
-    func doSearch(searchBar: UISearchBar,var searchtext :String){
-        
-        
-    }
+//    func searchBar(searchBar: UISearchBar,textDidChange searchText: String){
+//        
+//        doSearch(searchBar,searchtext:searchText)
+//    }
+//    
+//    
+//    func doSearch(searchBar: UISearchBar,var searchtext :String){
+//        
+//        
+//    }
 //
 
 

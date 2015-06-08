@@ -284,6 +284,39 @@
             </objects>
             <point key="canvasLocation" x="1894" y="302"/>
         </scene>
+        <!--Search Index View Controller-->
+        <scene sceneID="ca8-xx-GZP">
+            <objects>
+                <viewController storyboardIdentifier="searchindexview" hidesBottomBarWhenPushed="YES" id="AfL-RJ-zqP" customClass="SearchIndexViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0KR-tT-4lA"/>
+                        <viewControllerLayoutGuide type="bottom" id="TLf-Tu-xmW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sds-nB-T5L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awK-9i-P4b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="awK-9i-P4b" firstAttribute="top" secondItem="sds-nB-T5L" secondAttribute="top" id="UK3-7x-tYd"/>
+                            <constraint firstAttribute="trailing" secondItem="awK-9i-P4b" secondAttribute="trailing" id="XRa-gg-gO2"/>
+                            <constraint firstAttribute="bottom" secondItem="awK-9i-P4b" secondAttribute="bottom" id="dGA-Wk-h5x"/>
+                            <constraint firstItem="awK-9i-P4b" firstAttribute="leading" secondItem="sds-nB-T5L" secondAttribute="leading" id="g8v-TS-UUi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="awK-9i-P4b" id="7v3-Me-PZs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zfz-rJ-8ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184" y="1000"/>
+        </scene>
         <!--详情网页-->
         <scene sceneID="LZ9-oP-jmb">
             <objects>

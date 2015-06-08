@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D191B257436001A314A /* Default-568h@2x.png */; };
 		5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1B1B257445001A314A /* Default@2x.png */; };
+		5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */; };
 		5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */; };
 		5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */; };
 		5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		5F6A0D191B257436001A314A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1B1B257445001A314A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchIndexViewController.swift; path = vc/SearchIndexViewController.swift; sourceTree = "<group>"; };
 		5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexTuangouViewController.swift; path = vc/TabIndexTuangouViewController.swift; sourceTree = "<group>"; };
 		5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexShangjiaViewController.swift; path = vc/TabIndexShangjiaViewController.swift; sourceTree = "<group>"; };
 		5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexWodeViewController.swift; path = vc/TabIndexWodeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */,
 				5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */,
 				5FE56C3B1B216F7A00BF7E52 /* TabIndexGengduoViewController.swift */,
+				5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				5FFF8D231B1D751D007F4134 /* MyUITabBarController.swift in Sources */,
 				5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */,
 				5FFF8D261B1D7540007F4134 /* UIColor+Extension.swift in Sources */,
+				5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */,
 				5FFF8CF31B1D723B007F4134 /* AppDelegate.swift in Sources */,
 				5FE56C3C1B216F7A00BF7E52 /* TabIndexGengduoViewController.swift in Sources */,
 				5FFF8D161B1D73CA007F4134 /* WebViewProxy.m in Sources */,
