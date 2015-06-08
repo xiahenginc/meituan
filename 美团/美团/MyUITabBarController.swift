@@ -13,19 +13,19 @@ class MyUITabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.barTintColor  = UIColor.colorWithHex("#213F7F")
+        self.tabBar.barTintColor  = UIColor.colorWithHex("#efefef")
 
         var vcs = Array<RootNavigationViewController>()
         
         var vc0 = self.storyboard?.instantiateViewControllerWithIdentifier("indextuangou") as! TabIndexTuangouViewController
         var vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("indexshangjia") as! TabIndexShangjiaViewController
-        var vc2 = self.storyboard?.instantiateViewControllerWithIdentifier("indexwode") as! TabIndexWodeViewController
-        var vc3 = self.storyboard?.instantiateViewControllerWithIdentifier("indexgengduo") as! TabIndexGengduoViewController
+        var vc2 = self.storyboard?.instantiateViewControllerWithIdentifier("indexgengduo") as! TabIndexGengduoViewController
+        var vc3 = self.storyboard?.instantiateViewControllerWithIdentifier("indexwode") as! TabIndexWodeViewController
         
         var vcViews = [vc0,vc1,vc2,vc3]
-        var imgs = ["ic_nav_home_normal","ic_nav_opinion_normal","ic_nav_me_normal","ic_nav_me_normal"]
-        var imgssel = ["ic_nav_home_normal","ic_nav_opinion_normal","ic_nav_me_normal","ic_nav_me_normal"]
-        let arraytilte = ["团购","商家","我的","更多"]
+        var imgs = ["menu1_1","menu2_1","menu3_1","menu4_1"]
+        var imgssel = ["menu1_1","menu2_1","menu3_1","menu4_1"]
+        let arraytilte = ["首页","菜单","购物车","我的"]
       
         var i = 0
         for vc in vcViews{

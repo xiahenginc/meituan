@@ -23,7 +23,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        self.navigationBar.barTintColor = UIColor.colorWithHex("#1984c8")
+        self.navigationBar.barTintColor = UIColor.colorWithHex("#f96429")
         
         self.navigationBar.titleTextAttributes = globals_attributes
 //        if(self.viewControllers[0] is WebPageViewController){
@@ -68,7 +68,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
                 else{
                     var btnBack = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
                     btnBack.frame = CGRectMake(0, 0, 32, 32);
-                    btnBack.setBackgroundImage(UIImage(named: "back_arrow_normal"), forState: UIControlState.Normal)
+                    btnBack.setBackgroundImage(UIImage(named: "fh"), forState: UIControlState.Normal)
                     btnBack.addTarget(self, action: "onClickBack:", forControlEvents: UIControlEvents.TouchUpInside)
                     var leftBarButtonItem = UIBarButtonItem(customView:btnBack)
                     viewController.navigationItem.leftBarButtonItem = leftBarButtonItem

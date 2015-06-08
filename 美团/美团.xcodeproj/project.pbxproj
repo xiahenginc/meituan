@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D191B257436001A314A /* Default-568h@2x.png */; };
+		5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1B1B257445001A314A /* Default@2x.png */; };
 		5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */; };
 		5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */; };
 		5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F6A0D191B257436001A314A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5F6A0D1B1B257445001A314A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexTuangouViewController.swift; path = vc/TabIndexTuangouViewController.swift; sourceTree = "<group>"; };
 		5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexShangjiaViewController.swift; path = vc/TabIndexShangjiaViewController.swift; sourceTree = "<group>"; };
 		5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexWodeViewController.swift; path = vc/TabIndexWodeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		5FFF8CEF1B1D723B007F4134 /* 美团 */ = {
 			isa = PBXGroup;
 			children = (
+				5F6A0D1B1B257445001A314A /* Default@2x.png */,
+				5F6A0D191B257436001A314A /* Default-568h@2x.png */,
 				5FE56C311B216DF800BF7E52 /* vc */,
 				5FFF8D251B1D7540007F4134 /* UIColor+Extension.swift */,
 				5FFF8D211B1D751D007F4134 /* MyUITabBarController.swift */,
@@ -239,7 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */,
 				5FFF8CF81B1D723B007F4134 /* Main.storyboard in Resources */,
+				5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */,
 				5FFF8CFD1B1D723B007F4134 /* LaunchScreen.xib in Resources */,
 				5FFF8CFA1B1D723B007F4134 /* Images.xcassets in Resources */,
 			);
