@@ -14,7 +14,7 @@ class MyUITabBarController: UITabBarController {
         super.viewDidLoad()
 
         self.tabBar.barTintColor  = UIColor.colorWithHex("#efefef")
-
+        self.tabBar.tintColor = UIColor.colorWithHex("#f96429")
         var vcs = Array<RootNavigationViewController>()
         
         var vc0 = self.storyboard?.instantiateViewControllerWithIdentifier("indextuangou") as! TabIndexTuangouViewController
@@ -25,7 +25,7 @@ class MyUITabBarController: UITabBarController {
         var vcViews = [vc0,vc1,vc2,vc3]
         var imgs = ["menu1_1","menu2_1","menu3_1","menu4_1"]
         var imgssel = ["menu1_1","menu2_1","menu3_1","menu4_1"]
-        let arraytilte = ["首页","菜单","购物车","我的"]
+        let arraytilte = ["首页","分类","购物车","我的"]
       
         var i = 0
         for vc in vcViews{

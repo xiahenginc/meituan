@@ -12,12 +12,13 @@ class TabIndexWodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "我的"
+
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
-    var url = "http://www.baidu.com/"
+    var url = "http://www.test.com18.cn/grwsj/login.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

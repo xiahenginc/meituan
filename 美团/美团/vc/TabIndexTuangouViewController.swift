@@ -16,7 +16,7 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
         var searchBar = UISearchBar()
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
-        searchBar.placeholder = "搜索商品，巴拉巴巴拉"
+        searchBar.placeholder = "搜索商品"
         
         loadurl(initurl)
     }
@@ -28,7 +28,7 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
     }
     
     
-    var initurl = "http://i.meituan.com/"
+    var initurl = "http://www.test.com18.cn/grwsj/"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

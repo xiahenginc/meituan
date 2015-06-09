@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/vc/TabIndexShangjiaViewController.swift"
-            timestampString = "455187705.033842"
+            timestampString = "455518052.49624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,6 +90,22 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "onClickSearch(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/RootNavigationViewController.swift"
+            timestampString = "455518447.77987"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "onClickBack(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

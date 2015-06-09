@@ -71,11 +71,20 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
                     btnBack.setBackgroundImage(UIImage(named: "fh"), forState: UIControlState.Normal)
                     btnBack.addTarget(self, action: "onClickBack:", forControlEvents: UIControlEvents.TouchUpInside)
                     var leftBarButtonItem = UIBarButtonItem(customView:btnBack)
+                    leftBarButtonItem.tintColor = UIColor.colorWithHex("#f96429")
                     viewController.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }
         
             }
-            
+            if(viewController is SearchIndexViewController){
+                var btnBack = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+                btnBack.frame = CGRectMake(0, 0, 32, 32);
+                btnBack.setBackgroundImage(UIImage(named: "fh"), forState: UIControlState.Normal)
+                btnBack.addTarget(self, action: "onClickBack:", forControlEvents: UIControlEvents.TouchUpInside)
+                var leftBarButtonItem = UIBarButtonItem(customView:btnBack)
+                leftBarButtonItem.tintColor = UIColor.colorWithHex("#f96429")
+                viewController.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
     }
     func onClickBack(sender: UIViewController) {
         self.popViewControllerAnimated(true)

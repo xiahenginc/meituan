@@ -12,12 +12,13 @@ class TabIndexShangjiaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "分类"
         
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
-    var url = "http://i.meituan.com/s/?cevent=imt%2Fhomepage%2Fsearch"
+    var url = "http://www.test.com18.cn/grwsj/"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

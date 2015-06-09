@@ -12,12 +12,12 @@ class TabIndexGengduoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "购物车"
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
-    var url = "http://i.meituan.com/"
+    var url = "http://www.test.com18.cn/grwsj/car.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
