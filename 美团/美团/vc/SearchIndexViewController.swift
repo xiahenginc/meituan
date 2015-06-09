@@ -31,23 +31,31 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     func onClickSearch(sender: UIViewController) {
-        var txt = searchBar.text
-        if txt == ""{
+        var txts = searchBar.text
+//txts = "百度"
+        if txts == ""{
             url = "http://www.test.com18.cn/grwsj/product.htm"
         }
         else{
-            if let escapedTxt = txt.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()){
-                url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(escapedTxt)") as String
+            var customAllowedSet =  NSCharacterSet.URLQueryAllowedCharacterSet()
+            if let escapedTxt = txts.stringByAddingPercentEncodingWithAllowedCharacters(customAllowedSet){
+                url = "http://www.test.com18.cn/grwwx/search.jsp?w=\(escapedTxt)"
             }
             else{
-                url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(txt)") as String
-               
+                 url = "http://www.test.com18.cn/grwwx/search.jsp?w=\(txts)"               
             }
+            println("\(url)")
+            
+            // url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(txt)") as String
         }
 
+        
         let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+        if let r = requestURL{
+            let request = NSURLRequest(URL: r)
+            webView.loadRequest(request)
+        }
+        
     }
     
     var url = "http://www.test.com18.cn/grwsj/product.htm"
