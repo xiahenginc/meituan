@@ -16,7 +16,7 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
         
         searchBar.delegate = self
         self.navigationItem.titleView = searchBar
-        searchBar.placeholder = "搜索商品，巴拉巴巴拉"
+        searchBar.placeholder = "搜索商品"
         
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
@@ -32,22 +32,25 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
     }
     func onClickSearch(sender: UIViewController) {
         var txt = searchBar.text
-        //txt = "字符串"
-        if let escapedTxt = txt.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()){
-            url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(escapedTxt)") as String
+        if txt == ""{
+            url = "http://www.test.com18.cn/grwsj/product.htm"
         }
         else{
-            url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(txt)") as String
-           
+            if let escapedTxt = txt.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()){
+                url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(escapedTxt)") as String
+            }
+            else{
+                url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(txt)") as String
+               
+            }
         }
-        println("txt:\(url)")
-      //  url = "http://www.baidu.com"
+
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
     
-    var url = ""
+    var url = "http://www.test.com18.cn/grwsj/product.htm"
     var level = 1
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
@@ -86,6 +89,11 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
     
         func doSearch(searchBar: UISearchBar,var searchtext :String){
             
-            
+            if searchtext == ""{
+                url = "http://www.test.com18.cn/grwsj/product.htm"
+                let requestURL = NSURL(string:url)
+                let request = NSURLRequest(URL: requestURL!)
+                webView.loadRequest(request)
+            }
         }
 }

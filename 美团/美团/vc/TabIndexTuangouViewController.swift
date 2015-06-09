@@ -27,7 +27,7 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
         webView.loadRequest(request)
     }
     
-    
+    //首页
     var initurl = "http://www.test.com18.cn/grwsj/"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
@@ -39,7 +39,7 @@ class TabIndexTuangouViewController: UIViewController,UISearchBarDelegate {
     func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool{
         let dvc  = self.storyboard?.instantiateViewControllerWithIdentifier("searchindexview") as! SearchIndexViewController
         dvc.navigationController?.title = "搜索"
-        dvc.url = "http://i.meituan.com/s/?cevent=imt%2Fhomepage%2Fsearch"
+        //dvc.url = "http://www.test.com18.cn/grwsj/product.htm"
         self.navigationController?.pushViewController(dvc, animated: true)
         return false
     }

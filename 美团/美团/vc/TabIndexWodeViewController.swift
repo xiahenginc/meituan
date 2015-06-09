@@ -18,6 +18,7 @@ class TabIndexWodeViewController: UIViewController {
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
+    //我的
     var url = "http://www.test.com18.cn/grwsj/login.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!

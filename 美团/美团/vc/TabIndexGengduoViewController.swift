@@ -17,6 +17,7 @@ class TabIndexGengduoViewController: UIViewController {
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
+    //购物车
     var url = "http://www.test.com18.cn/grwsj/car.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!

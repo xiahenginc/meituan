@@ -18,7 +18,8 @@ class TabIndexShangjiaViewController: UIViewController {
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
     }
-    var url = "http://www.test.com18.cn/grwsj/"
+    //分类
+    var url = "http://www.test.com18.cn/grwsj/fl.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

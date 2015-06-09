@@ -83,22 +83,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/vc/SearchIndexViewController.swift"
-            timestampString = "455444683.204792"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "onClickSearch(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/RootNavigationViewController.swift"
             timestampString = "455518447.77987"
             startingColumnNumber = "9223372036854775807"
