@@ -32,12 +32,12 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
     }
     func onClickSearch(sender: UIViewController) {
         var txt = searchBar.text
-        txt = "字符串"
+        //txt = "字符串"
         if let escapedTxt = txt.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()){
-            url = NSString(format: "http://maps.googleapis.com/maps/api/geocode/json?address=\(escapedTxt)") as String
+            url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(escapedTxt)") as String
         }
         else{
-            url = NSString(format: "http://maps.googleapis.com/maps/api/geocode/json?address=\(txt)") as String
+            url = NSString(format: "http://www.test.com18.cn/grwwx/search.jsp?w=\(txt)") as String
            
         }
         println("txt:\(url)")
