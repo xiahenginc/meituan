@@ -12,7 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    typealias onChooseImage = (UIImage!) ->Void
+    class inner:NSObject,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+        var delegate:onChooseImage?
+        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+        {
+            picker.dismissViewControllerAnimated(true, completion: nil)
+            var image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            self.delegate?(image!)
+        }
+        func imagePickerControllerDidCancel(picker: UIImagePickerController)
+        {
+            println("picker cancel.")
+        }
+    }
+    var istance = inner()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -64,45 +79,85 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dispatch_sync(dispatch_get_main_queue(), {
                 if uriid == "qr"{
                     dispatch_async(dispatch_get_main_queue(), {
-                            var curvc = self.getActivityViewController()
-                        var dvc = curvc.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
+                            var curvc = self.getActivityViewController() as? UINavigationController
+                            var dvc = curvc?.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
                                 func onScanTxt(txt:String!)->Void{
                                     res.respondWithText(txt as String)
                                 }
-                                dvc.delegate =  onScanTxt
+                            dvc.delegate =  onScanTxt
+                            curvc?.pushViewController(dvc, animated: true)
 
                         })
+                }
+                if uriid == "pic"{
+                    dispatch_async(dispatch_get_main_queue(), {
+
+                        var curvc = self.getActivityViewController() as? UINavigationController
+                        var picker:UIImagePickerController?=UIImagePickerController()
+                        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                        func onChooseImage(image:UIImage!)->Void{
+                            res.respondWithImage(image)
+                        }
+                        
+                        self.istance.delegate = onChooseImage
+                        picker?.delegate = self.istance
+                       // curvc?.pushViewController(picker!, animated: true)
+                        curvc?.visibleViewController?.presentViewController(picker!, animated: true, completion: nil)
+                        
+                    })
+                }
+                
+                if uriid == "camera"{
                 }
             })
         })
     }
+    
+    func topViewController() -> UIViewController {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        return topViewController(app.window!.rootViewController!)
+    }
+    
+    func topViewController(rootViewController: UIViewController) -> UIViewController {
+        if let presented = rootViewController.presentedViewController {
+            if presented is UINavigationController {
+                let navi = presented as! UINavigationController
+                let lastViewController = navi.viewControllers.last as! UIViewController
+                return topViewController(lastViewController)
+            }
+            return topViewController(presented)
+        } else {
+            return rootViewController
+        }
+    }
         
       
     // 获取当前处于activity状态的view controller
-    func getActivityViewController() ->UIViewController{
-        var activityViewController:UIViewController?
-        var win = UIApplication.sharedApplication().keyWindow
-        if(win?.windowLevel != UIWindowLevelNormal){
-            var windows = UIApplication.sharedApplication().windows
-            for tmpWin in windows{
-                if tmpWin.windowLevel == UIWindowLevelNormal{
-                    win = tmpWin as? UIWindow
+    func getActivityViewController() ->UIViewController?{
+        var result: UIViewController?
+        var window = UIApplication.sharedApplication().keyWindow
+        if window?.windowLevel != UIWindowLevelNormal {
+            let windows = UIApplication.sharedApplication().windows
+            for tmpWin in windows {
+                if tmpWin.windowLevel == UIWindowLevelNormal {
+                    window = tmpWin as? UIWindow
                     break
                 }
             }
         }
         
-        var viewsArray = win?.subviews
-        if viewsArray?.count > 0{
-            var frontView = viewsArray?[0] as! UIView
-            if (frontView.nextResponder()?.isKindOfClass(UIViewController) != nil) {
-                activityViewController = frontView.nextResponder() as? UIViewController
-            }
-            else{
-                activityViewController =  win?.rootViewController;
+        if let views = window?.subviews {
+            if !views.isEmpty {
+                let frontView: AnyObject? = window?.subviews[0]
+                let nextResponder = frontView?.nextResponder()
+                if nextResponder is UIViewController {
+                    result = nextResponder as? UIViewController
+                } else {
+                    result = window?.rootViewController
+                }
             }
         }
-        return activityViewController!
+        return result
     }
 
 }
