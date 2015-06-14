@@ -17,6 +17,20 @@ class TabIndexWodeViewController: UIViewController {
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         webView.loadRequest(request)
+        
+        var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        btnTest.frame = CGRectMake(0, 0, 64, 32);
+        btnTest.setTitle("测试", forState: UIControlState.Normal)
+        //btnSearch.setBackgroundImage(UIImage(named: "fh"), forState: UIControlState.Normal)
+        btnTest.addTarget(self, action: "onClickTest:", forControlEvents: UIControlEvents.TouchUpInside)
+        var rightBarButtonItem = UIBarButtonItem(customView:btnTest)
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    func onClickTest(sender: UIViewController) {
+        let dvc = self.storyboard?.instantiateViewControllerWithIdentifier("localtest") as! LocalTestWebViewController
+
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
     //我的
     var url = "http://www.test.com18.cn/grwsj/login.htm"

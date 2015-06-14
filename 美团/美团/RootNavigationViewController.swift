@@ -44,7 +44,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
         animated: Bool){
             if(viewController is TabIndexTuangouViewController
             || viewController is TabIndexShangjiaViewController
-            || viewController is TabIndexWodeViewController
+           
             || viewController is TabIndexGengduoViewController
                 ){
                     self.navigationBarHidden = false

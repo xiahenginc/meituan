@@ -94,20 +94,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dispatch_sync(dispatch_get_main_queue(), {
                 if uriid == "qr"{
                     dispatch_async(dispatch_get_main_queue(), {
-                            var curvc = self.getActivityViewController() as? UINavigationController
+                            var curvc = self.getActivityViewController() //as? UINavigationController
                             var dvc = curvc?.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
                                 func onScanTxt(txt:String!)->Void{
                                     res.respondWithText(txt as String)
                                 }
                             dvc.delegate =  onScanTxt
-                            curvc?.pushViewController(dvc, animated: true)
+                        curvc?.presentViewController(dvc, animated: true, completion: nil)
+
 
                         })
                 }
                 if uriid == "pic"{
                     dispatch_async(dispatch_get_main_queue(), {
 
-                        var curvc = self.getActivityViewController() as? UINavigationController
+                        var curvc = self.getActivityViewController() //as? UINavigationController
                         var picker = UzysAssetsPickerController()
                         picker.maximumNumberOfSelectionVideo = 0;
                         picker.maximumNumberOfSelectionPhoto = 1;
@@ -118,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         self.istance.delegate = onChooseImage
                         picker.delegate = self.istance
                        // curvc?.pushViewController(picker!, animated: true)
-                        curvc?.visibleViewController?.presentViewController(picker, animated: true, completion: nil)
+                        curvc?.presentViewController(picker, animated: true, completion: nil)
                         
                     })
                 }

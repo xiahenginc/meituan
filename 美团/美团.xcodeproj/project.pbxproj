@@ -294,6 +294,7 @@
 				TargetAttributes = {
 					5FFF8CEC1B1D723B007F4134 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 24N474AU9T;
 					};
 					5FFF8D011B1D723B007F4134 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -500,13 +501,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Changzhou Iteasysoft Co., Ltd. (B4Y539L9G9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Changzhou Iteasysoft Co., Ltd. (B4Y539L9G9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "美团/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "794dbd29-7c56-4abe-a9a9-2956b1cc7d8d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "美团/meituan-Bridging-Header.h";
 			};
 			name = Debug;
@@ -515,13 +516,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Changzhou Iteasysoft Co., Ltd. (B4Y539L9G9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Changzhou Iteasysoft Co., Ltd. (B4Y539L9G9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "美团/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "794dbd29-7c56-4abe-a9a9-2956b1cc7d8d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "美团/meituan-Bridging-Header.h";
 			};
 			name = Release;
