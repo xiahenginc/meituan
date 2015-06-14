@@ -14,18 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     typealias onChooseImage = (UIImage!) ->Void
-    class inner:NSObject,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    class inner:NSObject,UzysAssetsPickerControllerDelegate {
         var delegate:onChooseImage?
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
-        {
-            picker.dismissViewControllerAnimated(true, completion: nil)
-            var image = info[UIImagePickerControllerOriginalImage] as? UIImage
-            self.delegate?(image!)
+         func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!){
+            
+            if(assets.count != 0){
+                var assets_array = assets as NSArray
+                assets_array.enumerateObjectsUsingBlock({ obj, index, stop in
+                    println(index)
+                    var representation:ALAsset = obj as! ALAsset
+                    var returnImg = UIImage(CGImage: representation.defaultRepresentation().fullResolutionImage().takeUnretainedValue(), scale:CGFloat(representation.defaultRepresentation().scale()), orientation:UIImageOrientation(rawValue: representation.defaultRepresentation().orientation().rawValue)!)
+                    self.delegate?(returnImg!)
+                })
+            }
         }
-        func imagePickerControllerDidCancel(picker: UIImagePickerController)
-        {
-            println("picker cancel.")
+        func uzysAssetsPickerControllerDidExceedMaximumNumberOfSelection(picker:UzysAssetsPickerController){
+            
         }
+//        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+//        {
+//            picker.dismissViewControllerAnimated(true, completion: nil)
+//            var image = info[UIImagePickerControllerOriginalImage] as? UIImage
+//            self.delegate?(image!)
+//        }
+//        func imagePickerControllerDidCancel(picker: UIImagePickerController)
+//        {
+//            println("picker cancel.")
+//        }
     }
     var istance = inner()
 
@@ -93,16 +108,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     dispatch_async(dispatch_get_main_queue(), {
 
                         var curvc = self.getActivityViewController() as? UINavigationController
-                        var picker:UIImagePickerController?=UIImagePickerController()
-                        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                        var picker = UzysAssetsPickerController()
+                        picker.maximumNumberOfSelectionVideo = 0;
+                        picker.maximumNumberOfSelectionPhoto = 1;
                         func onChooseImage(image:UIImage!)->Void{
                             res.respondWithImage(image)
                         }
                         
                         self.istance.delegate = onChooseImage
-                        picker?.delegate = self.istance
+                        picker.delegate = self.istance
                        // curvc?.pushViewController(picker!, animated: true)
-                        curvc?.visibleViewController?.presentViewController(picker!, animated: true, completion: nil)
+                        curvc?.visibleViewController?.presentViewController(picker, animated: true, completion: nil)
                         
                     })
                 }
