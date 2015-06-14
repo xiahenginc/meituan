@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165D26761B2D23D5006927D8 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26751B2D23D5006927D8 /* QRCodeViewController.swift */; };
+		165D267B1B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */; };
+		165D267C1B2D38B7006927D8 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26791B2D38B7006927D8 /* Alamofire.swift */; };
+		165D267D1B2D38B7006927D8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */; };
 		5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D191B257436001A314A /* Default-568h@2x.png */; };
 		5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1B1B257445001A314A /* Default@2x.png */; };
 		5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		165D26751B2D23D5006927D8 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = vc/QRCodeViewController.swift; sourceTree = "<group>"; };
+		165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
+		165D26791B2D38B7006927D8 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5F6A0D191B257436001A314A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1B1B257445001A314A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchIndexViewController.swift; path = vc/SearchIndexViewController.swift; sourceTree = "<group>"; };
@@ -82,9 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165D26771B2D38B7006927D8 /* thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */,
+				165D26791B2D38B7006927D8 /* Alamofire.swift */,
+				165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */,
+			);
+			path = thirdparty;
+			sourceTree = "<group>";
+		};
 		5FE56C311B216DF800BF7E52 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				165D26751B2D23D5006927D8 /* QRCodeViewController.swift */,
 				5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */,
 				5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */,
 				5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */,
@@ -117,6 +136,7 @@
 			children = (
 				5F6A0D1B1B257445001A314A /* Default@2x.png */,
 				5F6A0D191B257436001A314A /* Default-568h@2x.png */,
+				165D26771B2D38B7006927D8 /* thirdparty */,
 				5FE56C311B216DF800BF7E52 /* vc */,
 				5FFF8D251B1D7540007F4134 /* UIColor+Extension.swift */,
 				5FFF8D211B1D751D007F4134 /* MyUITabBarController.swift */,
@@ -270,14 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165D267B1B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift in Sources */,
 				5FFF8CF51B1D723B007F4134 /* ViewController.swift in Sources */,
 				5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */,
+				165D26761B2D23D5006927D8 /* QRCodeViewController.swift in Sources */,
 				5FFF8D241B1D751D007F4134 /* RootNavigationViewController.swift in Sources */,
 				5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */,
+				165D267C1B2D38B7006927D8 /* Alamofire.swift in Sources */,
 				5FFF8D231B1D751D007F4134 /* MyUITabBarController.swift in Sources */,
 				5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */,
 				5FFF8D261B1D7540007F4134 /* UIColor+Extension.swift in Sources */,
 				5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */,
+				165D267D1B2D38B7006927D8 /* SwiftyJSON.swift in Sources */,
 				5FFF8CF31B1D723B007F4134 /* AppDelegate.swift in Sources */,
 				5FE56C3C1B216F7A00BF7E52 /* TabIndexGengduoViewController.swift in Sources */,
 				5FFF8D161B1D73CA007F4134 /* WebViewProxy.m in Sources */,

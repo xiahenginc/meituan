@@ -42,24 +42,68 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func _setupProxy(){
-//        WebViewProxy.handleRequestsWithHost("localperson", handler: {
-//            (req:NSURLRequest!,res:WVPResponse! )-> Void in
-//            //            //http://local/cbjy.htm#__webviewproxyreq__
-//            var uriid = self.getSubString(req.URLString,starts: "/",ends: ".htm")
-//            println(uriid)
-//            dispatch_sync(dispatch_get_main_queue(), {
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
-//                    })
-//                    
-//                    return
-//                default:
-//                    title = "个人信息"
-//                }
-//                navto_webinfo_nofooter_personal(uriid,title)
-//            })
-//        })
+    func getSubString(s:String,starts:String,ends:String)->String{
+        println("getSubString:\(s)")
+        var rets = ""
+        let names = s.componentsSeparatedByString(ends)
+        if(names.count > 1){
+            let uris = names[0].componentsSeparatedByString(starts)
+            if(uris.count > 0 ){
+                rets = uris[uris.count - 1]
+            }
+        }
+        return rets
     }
+
+    func _setupProxy(){
+        WebViewProxy.handleRequestsWithHost("localdevice", handler: {
+                        (req:NSURLRequest!,res:WVPResponse! )-> Void in
+            //http://localdevice/qr#->扫描二维码
+            var uriid = self.getSubString(req.URLString,starts: "/",ends: "#")
+            println(uriid)
+            dispatch_sync(dispatch_get_main_queue(), {
+                if uriid == "qr"{
+                    dispatch_async(dispatch_get_main_queue(), {
+                            var curvc = self.getActivityViewController()
+                        var dvc = curvc.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
+                                func onScanTxt(txt:String!)->Void{
+                                    res.respondWithText(txt as String)
+                                }
+                                dvc.delegate =  onScanTxt
+
+                        })
+                }
+            })
+        })
+    }
+        
+      
+    // 获取当前处于activity状态的view controller
+    func getActivityViewController() ->UIViewController{
+        var activityViewController:UIViewController?
+        var win = UIApplication.sharedApplication().keyWindow
+        if(win?.windowLevel != UIWindowLevelNormal){
+            var windows = UIApplication.sharedApplication().windows
+            for tmpWin in windows{
+                if tmpWin.windowLevel == UIWindowLevelNormal{
+                    win = tmpWin as? UIWindow
+                    break
+                }
+            }
+        }
+        
+        var viewsArray = win?.subviews
+        if viewsArray?.count > 0{
+            var frontView = viewsArray?[0] as! UIView
+            if (frontView.nextResponder()?.isKindOfClass(UIViewController) != nil) {
+                activityViewController = frontView.nextResponder() as? UIViewController
+            }
+            else{
+                activityViewController =  win?.rootViewController;
+            }
+        }
+        return activityViewController!
+    }
+
 }
 
