@@ -100,7 +100,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                     res.respondWithText(txt as String)
                                 }
                             dvc.delegate =  onScanTxt
-                        curvc?.presentViewController(dvc, animated: true, completion: nil)
+                        curvc?.navigationController?.pushViewController(dvc, animated: true)
+                       // curvc?.presentViewController(dvc, animated: true, completion: nil)
 
 
                         })

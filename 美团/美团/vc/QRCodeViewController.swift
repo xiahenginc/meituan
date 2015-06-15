@@ -27,7 +27,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         imgView.alpha = 0.7
         view.addSubview(imgView)
         self.setupCamera()
-    
+        self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(animated: Bool) {

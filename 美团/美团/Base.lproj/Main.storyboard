@@ -389,7 +389,7 @@
         <!--二维码-->
         <scene sceneID="iOQ-7z-y2d">
             <objects>
-                <viewController storyboardIdentifier="qr" title="二维码" id="no8-FA-OAX" customClass="QRCodeViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qr" title="二维码" hidesBottomBarWhenPushed="YES" id="no8-FA-OAX" customClass="QRCodeViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TJY-0T-BHr"/>
                         <viewControllerLayoutGuide type="bottom" id="Em2-cC-Bq0"/>
