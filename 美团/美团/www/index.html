@@ -13,17 +13,48 @@
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
-        <button onclick="popqr()">扫描二维码</button>
+        <button id='qrbtn'">扫描二维码</button>
         <button onclick="setimage()">选择图片</button>
         <script type="text/javascript">
-            function popqr(){
-                var x = document.getElementById("image")
-                x.src = "http://localdevice/qr"
-            }
             function setimage(){
                 var x = document.getElementById("image")
                 x.src = "http://localdevice/pic"
             }
-        </script>
+
+            function connectWebViewJavascriptBridge(callback) {
+                if (window.WebViewJavascriptBridge) {
+                    callback(WebViewJavascriptBridge)
+                } else {
+                    document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                        callback(WebViewJavascriptBridge)
+                    }, false)
+                }
+            }
+
+            connectWebViewJavascriptBridge(function(bridge) {
+
+            /* Init your app here */
+
+            bridge.init(function(message, responseCallback) {
+                alert('Received message: ' + message)
+                if (responseCallback) {
+                    responseCallback("Right back atcha")
+                }
+            })
+                bridge.send('Hello from the javascript')
+                bridge.send('Please respond to this', function responseCallback(responseData) {
+                    console.log("Javascript got its response", responseData)
+                })
+            })
+                
+<!--               var button = document.getElementById('qrbtn')-->
+<!--               button.onclick = function(e) {-->
+<!--                    alert("click qrbtn");-->
+<!--                    e.preventDefault();-->
+<!--                    bridge.send('qr', function responseCallback(responseData) {-->
+<!--                        alert(responseData);-->
+<!--                    })-->
+<!--               }-->
+            </script>
     </body>
 </html>

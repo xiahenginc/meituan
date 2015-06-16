@@ -8,14 +8,16 @@
 
 import UIKit
 
-class TabIndexGengduoViewController: UIViewController {
+class TabIndexGengduoViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        myWebView = self.webView
+        
         super.viewDidLoad()
         self.navigationItem.title = "购物车"
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+
+
+        loadurl(url)
     }
     //购物车
     var url = "http://www.test.com18.cn/grwsj/car.htm"

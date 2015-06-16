@@ -8,14 +8,13 @@
 
 import UIKit
 
-class WebPageViewController: UIViewController {
+class WebPageViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        myWebView = self.webView
         super.viewDidLoad()
 
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+        loadurl(url)
     }
     var url = ""
     var level = 1

@@ -8,15 +8,14 @@
 
 import UIKit
 
-class TabIndexWodeViewController: UIViewController {
+class TabIndexWodeViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        myWebView = self.webView
         super.viewDidLoad()
         self.navigationItem.title = "我的"
 
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+        loadurl(url)
         
         var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnTest.frame = CGRectMake(0, 0, 64, 32);

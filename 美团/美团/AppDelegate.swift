@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        _setupProxy()
+       // _setupProxy()
         return true
     }
 
@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dispatch_sync(dispatch_get_main_queue(), {
                 if uriid == "qr"{
                     dispatch_async(dispatch_get_main_queue(), {
-                            var curvc = self.getActivityViewController() //as? UINavigationController
+                            var curvc = self.getActivityViewController() as? TabIndexWodeViewController
                             var dvc = curvc?.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
                                 func onScanTxt(txt:String!)->Void{
                                     res.respondWithText(txt as String)

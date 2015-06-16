@@ -9,5 +9,6 @@
 #ifndef meituan_meituan_Bridging_Header_h
 #define meituan_meituan_Bridging_Header_h
 #import "WebViewProxy.h"
+#import "WebViewJavascriptBridge.h"
 #import "UzysAssetsPickerController.h"
 #endif

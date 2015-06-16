@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
+class SearchIndexViewController: WebBaseViewController ,UISearchBarDelegate{
     var searchBar = UISearchBar()
     override func viewDidLoad() {
+        
+        myWebView = self.webView
         super.viewDidLoad()
         
         
@@ -18,9 +20,8 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
         self.navigationItem.titleView = searchBar
         searchBar.placeholder = "搜索商品"
         
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+
+        loadurl(url)
         
         var btnSearch = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnSearch.frame = CGRectMake(0, 0, 64, 32);
@@ -50,11 +51,7 @@ class SearchIndexViewController: UIViewController ,UISearchBarDelegate{
         }
 
         
-        let requestURL = NSURL(string:url)
-        if let r = requestURL{
-            let request = NSURLRequest(URL: r)
-            webView.loadRequest(request)
-        }
+        loadurl(url)
         
     }
     

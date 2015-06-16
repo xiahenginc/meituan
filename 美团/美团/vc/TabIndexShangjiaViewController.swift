@@ -8,15 +8,16 @@
 
 import UIKit
 
-class TabIndexShangjiaViewController: UIViewController {
+class TabIndexShangjiaViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        myWebView = self.webView
+        
         super.viewDidLoad()
         self.navigationItem.title = "分类"
         
-        let requestURL = NSURL(string:url)
-        let request = NSURLRequest(URL: requestURL!)
-        webView.loadRequest(request)
+        
+        loadurl(url)
     }
     //分类
     var url = "http://www.test.com18.cn/grwsj/fl.htm"

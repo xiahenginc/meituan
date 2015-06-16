@@ -8,15 +8,15 @@
 
 import UIKit
 
-class LocalTestWebViewController: UIViewController {
+class LocalTestWebViewController: WebBaseViewController {
 
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
+        
+        myWebView = self.webView
+
         super.viewDidLoad()
-        //        let requestURL = NSURL(string:url)
-        //        let request = NSURLRequest(URL: requestURL!)
-        //        webView.loadRequest(request)
-        //
+        
         webView?.opaque = false
         webView?.backgroundColor = UIColor.clearColor()
         if let path = NSBundle.mainBundle().pathForResource("index", ofType: "html",inDirectory:"www") {
