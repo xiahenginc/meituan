@@ -30,11 +30,22 @@ class WebBaseViewController: UIViewController {
                
             }
         })
-//        bridge.registerHandler("qr" ,handler: {
+//        bridge.registerHandler("swiftcalljssample" ,handler: {
 //            data, responseCallback in
-//            println("click qr,Message from Javascript: \(data)")
-//            responseCallback("thisisqrid")
+//            print("\(data)")
+//            responseCallback("")
 //        })
+        
+        var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        btnTest.frame = CGRectMake(0, 0, 64, 32);
+        btnTest.setTitle("测试", forState: UIControlState.Normal)
+        btnTest.addTarget(self, action: "onClickTest:", forControlEvents: UIControlEvents.TouchUpInside)
+        var rightBarButtonItem = UIBarButtonItem(customView:btnTest)
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    func onClickTest(sender: UIViewController) {
+        bridge.callHandler("swiftcalljssample",data:"从原生态调用js")
     }
 
     override func didReceiveMemoryWarning() {

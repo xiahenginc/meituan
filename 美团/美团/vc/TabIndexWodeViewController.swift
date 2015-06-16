@@ -26,9 +26,8 @@ class TabIndexWodeViewController: WebBaseViewController {
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
-    func onClickTest(sender: UIViewController) {
+    override func onClickTest(sender: UIViewController) {
         let dvc = self.storyboard?.instantiateViewControllerWithIdentifier("localtest") as! LocalTestWebViewController
-
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     //我的

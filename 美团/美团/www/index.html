@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
     <head>      
@@ -9,12 +9,13 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
        
-        <title>纪元佳品</title>
+        <title></title>
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
         <button id="qrbtn">扫描二维码</button>
-        <div id="qrtxt"></div>
+        扫描到的二维码为：<div id="qrtxt"></div>
+        <div id="fromswift">这里的文字是swift直接调用的</div>
         <button onclick="setimage()">选择图片</button>
         <script type="text/javascript">
             function setimage(){
@@ -33,13 +34,11 @@
             }
 
             connectWebViewJavascriptBridge(function(bridge) {
-
-                /* Init your app here */
-
+                /*初始化代码,不管他*/
                 bridge.init(function(message, responseCallback) {
-
                 })
-                   var button = document.getElementById('qrbtn')
+                 /*点击扫描二维码*/
+                 var button = document.getElementById('qrbtn')
                    button.onclick = function(e) {
                    e.preventDefault();
                    bridge.send('qr', function responseCallback(responseData) {
@@ -47,7 +46,12 @@
                         divtxt.innerText = responseData
                     })
                 }
-
+                /*来自swift直接调用*/
+               bridge.registerHandler('swiftcalljssample', function(data, responseCallback) {
+                  var divtxt = document.getElementById('fromswift')
+                  divtxt.innerText = data
+                  responseCallback("jsreturntoswift")
+                })
             })
                 
         </script>
