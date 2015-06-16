@@ -13,7 +13,8 @@
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
-        <button id='qrbtn'">扫描二维码</button>
+        <button id="qrbtn">扫描二维码</button>
+        <div id="qrtxt"></div>
         <button onclick="setimage()">选择图片</button>
         <script type="text/javascript">
             function setimage(){
@@ -33,28 +34,22 @@
 
             connectWebViewJavascriptBridge(function(bridge) {
 
-            /* Init your app here */
+                /* Init your app here */
 
-            bridge.init(function(message, responseCallback) {
-                alert('Received message: ' + message)
-                if (responseCallback) {
-                    responseCallback("Right back atcha")
-                }
-            })
-                bridge.send('Hello from the javascript')
-                bridge.send('Please respond to this', function responseCallback(responseData) {
-                    console.log("Javascript got its response", responseData)
+                bridge.init(function(message, responseCallback) {
+
                 })
+                   var button = document.getElementById('qrbtn')
+                   button.onclick = function(e) {
+                   e.preventDefault();
+                   bridge.send('qr', function responseCallback(responseData) {
+                        var divtxt = document.getElementById('qrtxt')
+                        divtxt.innerText = responseData
+                    })
+                }
+
             })
                 
-<!--               var button = document.getElementById('qrbtn')-->
-<!--               button.onclick = function(e) {-->
-<!--                    alert("click qrbtn");-->
-<!--                    e.preventDefault();-->
-<!--                    bridge.send('qr', function responseCallback(responseData) {-->
-<!--                        alert(responseData);-->
-<!--                    })-->
-<!--               }-->
-            </script>
+        </script>
     </body>
 </html>

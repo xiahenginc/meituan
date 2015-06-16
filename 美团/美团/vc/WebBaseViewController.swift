@@ -18,13 +18,22 @@ class WebBaseViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.bridge = WebViewJavascriptBridge(forWebView: myWebView, handler: {
             data, responseCallback in
-            println("Message from Javascript: \(data)")
-            responseCallback("Back at ya")
+            let cmd = data as? String
+            if cmd == "qr"{
+               //点击QR二维码
+                var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
+                func onScanTxt(txt:String!)->Void{
+                    responseCallback(txt)
+                }
+                dvc.delegate =  onScanTxt
+                self.navigationController?.pushViewController(dvc, animated: true)
+               
+            }
         })
 //        bridge.registerHandler("qr" ,handler: {
 //            data, responseCallback in
-//            println("Message from Javascript: \(data)")
-//            responseCallback("axxee")
+//            println("click qr,Message from Javascript: \(data)")
+//            responseCallback("thisisqrid")
 //        })
     }
 
