@@ -29,6 +29,7 @@
 		5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D191B257436001A314A /* Default-568h@2x.png */; };
 		5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1B1B257445001A314A /* Default@2x.png */; };
 		5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */; };
+		5FB3ABB91B301A15005DA1EB /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB3ABB81B301A15005DA1EB /* empty.png */; };
 		5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */; };
 		5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */; };
 		5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */; };
@@ -88,6 +89,7 @@
 		5F6A0D191B257436001A314A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1B1B257445001A314A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchIndexViewController.swift; path = vc/SearchIndexViewController.swift; sourceTree = "<group>"; };
+		5FB3ABB81B301A15005DA1EB /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexTuangouViewController.swift; path = vc/TabIndexTuangouViewController.swift; sourceTree = "<group>"; };
 		5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexShangjiaViewController.swift; path = vc/TabIndexShangjiaViewController.swift; sourceTree = "<group>"; };
 		5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexWodeViewController.swift; path = vc/TabIndexWodeViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		5FFF8CEF1B1D723B007F4134 /* 美团 */ = {
 			isa = PBXGroup;
 			children = (
+				5FB3ABB81B301A15005DA1EB /* empty.png */,
 				165D269D1B2E9429006927D8 /* line.png */,
 				5F6A0D191B257436001A314A /* Default-568h@2x.png */,
 				5F6A0D1B1B257445001A314A /* Default@2x.png */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F66F4501B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt in Resources */,
+				5FB3ABB91B301A15005DA1EB /* empty.png in Resources */,
 				165D26811B2D40AE006927D8 /* www in Resources */,
 				5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */,
 				165D269E1B2E9429006927D8 /* line.png in Resources */,

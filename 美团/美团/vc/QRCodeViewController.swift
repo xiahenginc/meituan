@@ -22,7 +22,9 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var line = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        var imgView = UIImageView(frame: view.frame)
+        var frame = CGRectMake(50, 100, view.frame.width - 100, view.frame.height-130)
+        
+        var imgView = UIImageView(frame: frame)
         imgView.image = UIImage(named: "empty")
         imgView.alpha = 0.7
         view.addSubview(imgView)
