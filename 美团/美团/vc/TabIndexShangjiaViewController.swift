@@ -11,16 +11,16 @@ import UIKit
 class TabIndexShangjiaViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        url = "http://www.grwtest.com18.cn/wap/ftype.jsp"
+
         myWebView = self.webView
         
         super.viewDidLoad()
         self.navigationItem.title = "分类"
-        
-        
-        loadurl(url)
+     
     }
     //分类
-    var url = "http://www.test.com18.cn/grwsj/fl.htm"
+    
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

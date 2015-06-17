@@ -11,16 +11,16 @@ import UIKit
 class TabIndexGengduoViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        url = "http://www.grwtest.com18.cn/wap/jrgwc_sf.jsp"
+        
         myWebView = self.webView
         
         super.viewDidLoad()
         self.navigationItem.title = "购物车"
 
-
-        loadurl(url)
     }
     //购物车
-    var url = "http://www.test.com18.cn/grwsj/car.htm"
+
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

@@ -11,12 +11,13 @@ import UIKit
 class TabIndexWodeViewController: WebBaseViewController {
 
     override func viewDidLoad() {
+        url = "http://www.grwtest.com18.cn/wap/grzx.jsp"
+        
         myWebView = self.webView
         super.viewDidLoad()
+        
         self.navigationItem.title = "我的"
 
-        loadurl(url)
-        
         var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnTest.frame = CGRectMake(0, 0, 64, 32);
         btnTest.setTitle("测试", forState: UIControlState.Normal)
@@ -27,11 +28,13 @@ class TabIndexWodeViewController: WebBaseViewController {
     }
     
     override func onClickTest(sender: UIViewController) {
+//        dispatch_async(dispatch_get_main_queue(), {
+//            NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
+//        })
         let dvc = self.storyboard?.instantiateViewControllerWithIdentifier("localtest") as! LocalTestWebViewController
         self.navigationController?.pushViewController(dvc, animated: true)
     }
     //我的
-    var url = "http://www.test.com18.cn/grwsj/login.htm"
     var level = 0
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {

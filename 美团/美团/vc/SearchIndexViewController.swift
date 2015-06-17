@@ -11,7 +11,7 @@ import UIKit
 class SearchIndexViewController: WebBaseViewController ,UISearchBarDelegate{
     var searchBar = UISearchBar()
     override func viewDidLoad() {
-        
+        url = "http://www.test.com18.cn/grwsj/product.htm"
         myWebView = self.webView
         super.viewDidLoad()
         
@@ -20,8 +20,6 @@ class SearchIndexViewController: WebBaseViewController ,UISearchBarDelegate{
         self.navigationItem.titleView = searchBar
         searchBar.placeholder = "搜索商品"
         
-
-        loadurl(url)
         
         var btnSearch = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnSearch.frame = CGRectMake(0, 0, 64, 32);
@@ -51,12 +49,10 @@ class SearchIndexViewController: WebBaseViewController ,UISearchBarDelegate{
         }
 
         
-        loadurl(url)
+        loadurl()
         
     }
     
-    var url = "http://www.test.com18.cn/grwsj/product.htm"
-    var level = 1
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

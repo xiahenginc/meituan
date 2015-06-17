@@ -13,6 +13,7 @@
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
+        <button id="refreshallsessions">刷新sesion,登录成功后调用</button>
         <button id="qrbtn">扫描二维码</button>
         扫描到的二维码为：<div id="qrtxt"></div>
         <div id="fromswift">这里的文字是swift直接调用的</div>
@@ -34,18 +35,27 @@
             }
 
             connectWebViewJavascriptBridge(function(bridge) {
-                /*初始化代码,不管他*/
+                /*初始化代码,不管他,但一定要写*/
                 bridge.init(function(message, responseCallback) {
                 })
                  /*点击扫描二维码*/
                  var button = document.getElementById('qrbtn')
                    button.onclick = function(e) {
-                   e.preventDefault();
-                   bridge.send('qr', function responseCallback(responseData) {
-                        var divtxt = document.getElementById('qrtxt')
-                        divtxt.innerText = responseData
-                    })
+                       e.preventDefault();
+                       bridge.send('qr', function responseCallback(responseData) {
+                            var divtxt = document.getElementById('qrtxt')
+                            divtxt.innerText = responseData
+                        })
                 }
+                /*js判断登录成功后刷新*/
+               var btnRefreshSessions = document.getElementById('refreshallsessions')
+               btnRefreshSessions.onclick = function(e) {
+               e.preventDefault();
+               bridge.send('ras', function responseCallback(responseData) {
+                    var divtxt = document.getElementById('fromswift')
+                    divtxt.innerText = responseData
+                    })
+               }
                 /*来自swift直接调用*/
                bridge.registerHandler('swiftcalljssample', function(data, responseCallback) {
                   var divtxt = document.getElementById('fromswift')

@@ -10,7 +10,7 @@ import UIKit
 
 class WebBaseViewController: UIViewController {
     var bridge: WebViewJavascriptBridge!
-
+    var url = ""
     var myWebView:UIWebView?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,12 @@ class WebBaseViewController: UIViewController {
                 self.navigationController?.pushViewController(dvc, animated: true)
                
             }
+            else if cmd == "ras"{
+                dispatch_async(dispatch_get_main_queue(), {
+                    NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
+                })
+                responseCallback("刷新session成功")
+            }
         })
 //        bridge.registerHandler("swiftcalljssample" ,handler: {
 //            data, responseCallback in
@@ -42,6 +48,26 @@ class WebBaseViewController: UIViewController {
         btnTest.addTarget(self, action: "onClickTest:", forControlEvents: UIControlEvents.TouchUpInside)
         var rightBarButtonItem = UIBarButtonItem(customView:btnTest)
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoginRefresh:", name: "onLoginRefresh", object: nil)
+        self.navigationController?.navigationBarHidden = true
+        
+        loadurl()
+//        var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDel.curDetailView = self
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func onLoginRefresh(notification: NSNotification){
+        refreshPage()
+    }
+    
+    func refreshPage(){
+        loadurl()
     }
     
     func onClickTest(sender: UIViewController) {
@@ -53,7 +79,7 @@ class WebBaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
    
-    func loadurl(url:String){
+    func loadurl(){
         let requestURL = NSURL(string:url)
         let request = NSURLRequest(URL: requestURL!)
         myWebView?.loadRequest(request)

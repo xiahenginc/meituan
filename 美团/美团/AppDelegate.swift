@@ -110,9 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
                     })
                 }
-                
-                if uriid == "camera"{
-                }
             })
         })
     }

@@ -11,6 +11,9 @@ import UIKit
 class TabIndexTuangouViewController: WebBaseViewController,UISearchBarDelegate {
 
     override func viewDidLoad() {
+        url = "http://www.grwtest.com18.cn/wap/index.jsp"
+
+        
         myWebView = self.webView
         super.viewDidLoad()
        
@@ -21,14 +24,13 @@ class TabIndexTuangouViewController: WebBaseViewController,UISearchBarDelegate {
         searchBar.placeholder = "搜索商品"
         
        
-        loadurl(initurl)
+     
     }
     
 
     
     //首页
-    var initurl = "http://www.test.com18.cn/grwsj/"
-    var level = 0
+
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

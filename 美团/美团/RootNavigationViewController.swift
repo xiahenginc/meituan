@@ -44,13 +44,17 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
         animated: Bool){
             if(viewController is TabIndexTuangouViewController
             || viewController is TabIndexShangjiaViewController
-           
+            || viewController is TabIndexWodeViewController
             || viewController is TabIndexGengduoViewController
                 ){
                     self.navigationBarHidden = false
-                    viewController.navigationItem.leftBarButtonItem = nil
-                    viewController.navigationItem.hidesBackButton = true
-                    viewController.navigationItem.rightBarButtonItem = nil
+                    if(viewController is TabIndexWodeViewController){
+                    }
+                    else{
+                        viewController.navigationItem.leftBarButtonItem = nil
+                        viewController.navigationItem.hidesBackButton = true
+                        viewController.navigationItem.rightBarButtonItem = nil
+                    }
             }
             if(viewController is WebPageViewController){
                 let vc = viewController as! WebPageViewController

@@ -13,19 +13,23 @@ class LocalTestWebViewController: WebBaseViewController {
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         
+        
         myWebView = self.webView
 
         super.viewDidLoad()
         
+        
+        self.navigationController?.navigationBarHidden = false
+        self.navigationItem.hidesBackButton = false
+        
+    }
+    override func refreshPage(){
+        
+    }
+    override func loadurl(){
         webView?.opaque = false
         webView?.backgroundColor = UIColor.clearColor()
         if let path = NSBundle.mainBundle().pathForResource("index", ofType: "html",inDirectory:"www") {
-            //            let baseURL = NSURL.fileURLWithPath(path.stringByDeletingLastPathComponent,isDirectory:true)
-            //            let requestURL = NSURL(string:path.lastPathComponent,relativeToURL:baseURL)
-            //            let request = NSURLRequest(URL: requestURL!)
-            //            webView.loadRequest(request)
-            
-            
             if let htmlData = NSData(contentsOfFile: path){
                 var htmlString = NSString(data:htmlData,encoding:NSUTF8StringEncoding)!
                 let nshtmdata = htmlString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -34,10 +38,7 @@ class LocalTestWebViewController: WebBaseViewController {
                 webView.loadData(nshtmdata, MIMEType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
             }
         }
-        
     }
-    var url = ""
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

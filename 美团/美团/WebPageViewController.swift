@@ -13,10 +13,7 @@ class WebPageViewController: WebBaseViewController {
     override func viewDidLoad() {
         myWebView = self.webView
         super.viewDidLoad()
-
-        loadurl(url)
     }
-    var url = ""
     var level = 1
     @IBOutlet weak var webView: UIWebView!
     override func didReceiveMemoryWarning() {
