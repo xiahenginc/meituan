@@ -31,7 +31,9 @@ class WebBaseViewController: UIViewController {
             }
             else if cmd == "ras"{
                 dispatch_async(dispatch_get_main_queue(), {
+                    NSNotificationCenter.defaultCenter().removeObserver(self)
                     NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoginRefresh:", name: "onLoginRefresh", object: nil)
                 })
                 responseCallback("刷新session成功")
             }
@@ -67,7 +69,9 @@ class WebBaseViewController: UIViewController {
     }
     
     func refreshPage(){
-        loadurl()
+       // loadurl()
+        println("refresh page:\(self.myWebView?.request!.URL!.absoluteString)")
+        myWebView?.reload()
     }
     
     func onClickTest(sender: UIViewController) {
