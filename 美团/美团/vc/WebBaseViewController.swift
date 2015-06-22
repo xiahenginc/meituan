@@ -15,34 +15,65 @@ class WebBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        WebViewJavascriptBridge.enableLogging()
         // Do any additional setup after loading the view.
         self.bridge = WebViewJavascriptBridge(forWebView: myWebView, handler: {
             data, responseCallback in
-            let cmd = data as? String
-            if cmd == "qr"{
-               //点击QR二维码
-                var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
-                func onScanTxt(txt:String!)->Void{
-                    responseCallback(txt)
-                }
-                dvc.delegate =  onScanTxt
-                self.navigationController?.pushViewController(dvc, animated: true)
-               
-            }
-            else if cmd == "ras"{
-                dispatch_async(dispatch_get_main_queue(), {
-                    NSNotificationCenter.defaultCenter().removeObserver(self)
-                    NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
-                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoginRefresh:", name: "onLoginRefresh", object: nil)
-                })
-                responseCallback("刷新session成功")
-            }
         })
-//        bridge.registerHandler("swiftcalljssample" ,handler: {
-//            data, responseCallback in
-//            print("\(data)")
-//            responseCallback("")
-//        })
+        
+        bridge.registerHandler("qr" ,handler: {
+            data, responseCallback in
+            //点击QR二维码
+            var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
+            func onScanTxt(txt:String!)->Void{
+                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+                responseCallback(jsonRes.object)
+            }
+            dvc.delegate =  onScanTxt
+            self.navigationController?.pushViewController(dvc, animated: true)
+
+        })
+        
+        bridge.registerHandler("ras" ,handler: {
+            data, responseCallback in
+            dispatch_async(dispatch_get_main_queue(), {
+                NSNotificationCenter.defaultCenter().removeObserver(self)
+                NSNotificationCenter.defaultCenter().postNotificationName("onLoginRefresh", object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoginRefresh:", name: "onLoginRefresh", object: nil)
+            })
+            var txt:String! = "OK"
+            let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+            responseCallback(jsonRes.object)
+            
+        })
+        
+        bridge.registerHandler("pp" ,handler: {
+            data, responseCallback in
+
+            let json = JSON(data)
+            
+            if let paramurl = json["param1"].string{
+                println("recv json===>\(paramurl)")
+                if let paramaction = json["param2"].string{
+                    if paramaction == "self"{
+                        self.url = paramurl
+                        self.loadurl()
+                        return
+                    }
+                    else if paramaction == "blank"{
+                        let dvc = self.storyboard?.instantiateViewControllerWithIdentifier("webpageview") as! WebPageViewController
+                        dvc.url  = paramurl
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                        
+                    }
+                }
+            }
+
+            var txt:String! = "OK"
+            let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+            responseCallback(jsonRes.object)
+            
+        })
         
         var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnTest.frame = CGRectMake(0, 0, 64, 32);
@@ -75,7 +106,18 @@ class WebBaseViewController: UIViewController {
     }
     
     func onClickTest(sender: UIViewController) {
-        bridge.callHandler("swiftcalljssample",data:"从原生态调用js")
+        var txt:String! = "这是个测试"
+        let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+        bridge.callHandler("calljs",data:jsonRes.object,responseCallback:{
+            data  in
+            let json = JSON(data)
+
+            if let p2 = json["param2"].string{
+                println("recv json===>\(p2)")
+            }
+            
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {

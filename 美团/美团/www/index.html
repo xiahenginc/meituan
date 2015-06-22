@@ -13,12 +13,24 @@
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
+        <button id="pushpage1">在当前窗口改变页面(www.baidu.com)</button>
+        <br/>
+        <button id="pushpage2">弹出新页面到新窗口(www.baidu.com)</button>
+        <br/>
         <button id="refreshallsessions">刷新sesion,登录成功后调用</button>
+        <br/>
         <button id="qrbtn">扫描二维码</button>
         扫描到的二维码为：<div id="qrtxt"></div>
+         <br/>
         <div id="fromswift">这里的文字是swift直接调用的</div>
+         <br/>
         <button onclick="setimage()">选择图片</button>
+         <br/>
         <script type="text/javascript">
+            function createjsonreq(types,p1,p2){
+                var jsonobj = {type:types,param1:p1,param2:p2};
+                return jsonobj;
+            }
             function setimage(){
                 var x = document.getElementById("image")
                 x.src = "http://localdevice/pic"
@@ -38,29 +50,48 @@
                 /*初始化代码,不管他,但一定要写*/
                 bridge.init(function(message, responseCallback) {
                 })
-                 /*点击扫描二维码*/
-                 var button = document.getElementById('qrbtn')
+                /*点击扫描二维码*/
+                var button = document.getElementById('qrbtn')
                    button.onclick = function(e) {
                        e.preventDefault();
-                       bridge.send('qr', function responseCallback(responseData) {
+                    //createjsonreq('req','qr','','')
+                       bridge.callHandler('qr',createjsonreq('req','',''),function responseCallback(jsonobj) {
                             var divtxt = document.getElementById('qrtxt')
-                            divtxt.innerText = responseData
+                            divtxt.innerText = jsonobj.param2
                         })
                 }
                 /*js判断登录成功后刷新*/
                var btnRefreshSessions = document.getElementById('refreshallsessions')
                btnRefreshSessions.onclick = function(e) {
                e.preventDefault();
-               bridge.send('ras', function responseCallback(responseData) {
-                    var divtxt = document.getElementById('fromswift')
-                    divtxt.innerText = responseData
+               bridge.callHandler('ras',createjsonreq('req','',''), function responseCallback(jsonobj) {
+                           var divtxt = document.getElementById('fromswift')
+                           divtxt.innerText = jsonobj.param2
                     })
                }
+                /*改变当前窗口地址*/
+                var btnpp1 = document.getElementById('pushpage1')
+                btnpp1.onclick = function(e) {
+                    e.preventDefault();
+                    bridge.callHandler('pp',createjsonreq('req','http://www.baidu.com','self'), function responseCallback(jsonobj){
+                          var divtxt = document.getElementById('fromswift')
+                          divtxt.innerText = jsonobj.param2
+                    })
+                }
+                /*弹出新页面*/
+                var btnpp2 = document.getElementById('pushpage2')
+                btnpp2.onclick = function(e) {
+                e.preventDefault();
+                bridge.callHandler('pp',createjsonreq('req','http://www.baidu.com','blank'), function responseCallback(jsonobj) {
+                      var divtxt = document.getElementById('fromswift')
+                      divtxt.innerText = jsonobj.param2
+                      })
+                }
                 /*来自swift直接调用*/
-               bridge.registerHandler('swiftcalljssample', function(data, responseCallback) {
+               bridge.registerHandler('calljs', function(jsonobj, responseCallback) {
                   var divtxt = document.getElementById('fromswift')
-                  divtxt.innerText = data
-                  responseCallback("jsreturntoswift")
+                  divtxt.innerText = jsonobj.param2
+                  responseCallback(createjsonreq('res',jsonobj.cmdstr,'t1','t2'))
                 })
             })
                 

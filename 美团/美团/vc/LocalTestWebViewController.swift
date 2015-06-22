@@ -27,16 +27,22 @@ class LocalTestWebViewController: WebBaseViewController {
         
     }
     override func loadurl(){
-        webView?.opaque = false
-        webView?.backgroundColor = UIColor.clearColor()
-        if let path = NSBundle.mainBundle().pathForResource("grzx", ofType: "html",inDirectory:"www") {
-            if let htmlData = NSData(contentsOfFile: path){
-                var htmlString = NSString(data:htmlData,encoding:NSUTF8StringEncoding)!
-                let nshtmdata = htmlString.dataUsingEncoding(NSUTF8StringEncoding)
-                
-                let baseURL = NSURL.fileURLWithPath(path.stringByDeletingLastPathComponent,isDirectory:true)
-                webView.loadData(nshtmdata, MIMEType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
+        if url.isEmpty {
+            webView?.opaque = false
+            webView?.backgroundColor = UIColor.clearColor()
+            if let path = NSBundle.mainBundle().pathForResource("index", ofType: "html",inDirectory:"www") {
+                if let htmlData = NSData(contentsOfFile: path){
+                    var htmlString = NSString(data:htmlData,encoding:NSUTF8StringEncoding)!
+                    let nshtmdata = htmlString.dataUsingEncoding(NSUTF8StringEncoding)
+                    
+                    let baseURL = NSURL.fileURLWithPath(path.stringByDeletingLastPathComponent,isDirectory:true)
+                    webView.loadData(nshtmdata, MIMEType: "text/html", textEncodingName: "UTF-8", baseURL: baseURL)
+                }
             }
+
+        }
+        else{
+            super.loadurl()
         }
     }
     override func didReceiveMemoryWarning() {
