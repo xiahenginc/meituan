@@ -87,37 +87,20 @@ class WebBaseViewController: UIViewController {
                     resultTxt = "success"
                     println("\(txt)")
                 }
+                LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
                 let jsonRes = JSON(["type":"req","param1":resultTxt,"param2":txt])
                 responseCallback(jsonRes.object)
             }
             
-//            let geoCoder = CLGeocoder()
-//
-//            geoCoder.reverseGeocodeLocation(curLocation, completionHandler: { (placemarks:[AnyObject]!, error:NSError!) -> Void in
-//                var txt:String! = "OK"
-//                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
-//                responseCallback(jsonRes.object)
-//                if error != nil{
-//                    txt = error.domain
-//                }else{                
-//                if placemarks != nil && placemarks.count > 0 {
-//                    let placemark = placemarks[0] as! CLPlacemark
-//    //                    let annotation = MKPointAnnotation()
-//    //                    annotation.title = self.restaurant.name
-//    //                    annotation.subtitle = self.restaurant.type
-//    //                    annotation.coordinate = placemark.location.coordinate
-//                        
-//
-//                    }
-//                }
-//                responseCallback(jsonRes.object)
-//                
-//            })
-
-
-            
         })
         //--------------------------------------------------------------------
+        //调用地图
+        bridge.registerHandler("cmv" ,handler: {
+            data, responseCallback in
+            //MapViewController
+            let dvc = self.storyboard?.instantiateViewControllerWithIdentifier("mapview") as! MapViewController
+            self.navigationController?.pushViewController(dvc, animated: true)
+        })
        
 
 

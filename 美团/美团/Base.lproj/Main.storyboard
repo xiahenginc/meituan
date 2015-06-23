@@ -418,6 +418,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-qn-iXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="vRM-rl-4wV">
+            <objects>
+                <viewController storyboardIdentifier="mapview" id="Zv5-pb-dtm" customClass="MapViewController" customModule="美团" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3f4-fK-PzM"/>
+                        <viewControllerLayoutGuide type="bottom" id="gpi-PC-mcP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iP8-R9-Yeq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-dB-zlZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wBb-dB-zlZ" secondAttribute="trailing" id="A9U-uJ-zOp"/>
+                            <constraint firstItem="wBb-dB-zlZ" firstAttribute="leading" secondItem="iP8-R9-Yeq" secondAttribute="leading" id="O8r-5S-HVJ"/>
+                            <constraint firstItem="gpi-PC-mcP" firstAttribute="top" secondItem="wBb-dB-zlZ" secondAttribute="bottom" id="SVE-Sv-NOR"/>
+                            <constraint firstItem="wBb-dB-zlZ" firstAttribute="top" secondItem="iP8-R9-Yeq" secondAttribute="top" id="jSn-i9-YEI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wBb-dB-zlZ" id="ODA-LJ-T3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICL-g7-T9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256" y="986"/>
+        </scene>
         <!--Root Navigation View Controller-->
         <scene sceneID="n9r-EK-wKs">
             <objects>

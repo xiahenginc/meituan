@@ -23,6 +23,7 @@
 		165D269B1B2D92D5006927D8 /* UzysGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D26911B2D92D5006927D8 /* UzysGroupViewCell.m */; };
 		165D269C1B2D92D5006927D8 /* UzysWrapperPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D26931B2D92D5006927D8 /* UzysWrapperPickerController.m */; };
 		165D269E1B2E9429006927D8 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 165D269D1B2E9429006927D8 /* line.png */; };
+		5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E561B391C8600B0D136 /* MapViewController.swift */; };
 		5F66F44B1B2FF45C009E4FDA /* WebBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */; };
 		5F66F4501B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F66F44E1B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt */; };
 		5F66F4511B2FFAD3009E4FDA /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F66F44F1B2FFAD3009E4FDA /* WebViewJavascriptBridge.m */; };
@@ -85,6 +86,7 @@
 		165D26921B2D92D5006927D8 /* UzysWrapperPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysWrapperPickerController.h; sourceTree = "<group>"; };
 		165D26931B2D92D5006927D8 /* UzysWrapperPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysWrapperPickerController.m; sourceTree = "<group>"; };
 		165D269D1B2E9429006927D8 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		5F3B7E561B391C8600B0D136 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = vc/MapViewController.swift; sourceTree = "<group>"; };
 		5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebBaseViewController.swift; path = vc/WebBaseViewController.swift; sourceTree = "<group>"; };
 		5F66F44D1B2FFAD3009E4FDA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		5F66F44E1B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		5FE56C311B216DF800BF7E52 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				5F3B7E561B391C8600B0D136 /* MapViewController.swift */,
 				165D26751B2D23D5006927D8 /* QRCodeViewController.swift */,
 				5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */,
 				5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */,
@@ -417,6 +420,7 @@
 				5FC5E0921B38FDF400FC20F7 /* Locationmanager.swift in Sources */,
 				5FFF8D281B1D7843007F4134 /* WebPageViewController.swift in Sources */,
 				165D26971B2D92D5006927D8 /* UzysAssetsPickerController.m in Sources */,
+				5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
