@@ -78,12 +78,16 @@ class WebBaseViewController: UIViewController {
         bridge.registerHandler("gcl" ,handler: {
             data, responseCallback in
            
-            var txt:String! = "cannot get location"
+            var txt:String! = "不能获取坐标"
             LocationManager.getInstance().startMonitoringSignificantLocationChanges {
-                (location) -> () in
-                txt = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
-                println("\(txt)")
-                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+                (issuccess,location) -> () in
+                var resultTxt:String!="failed"
+                if issuccess {
+                    txt = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+                    resultTxt = "success"
+                    println("\(txt)")
+                }
+                let jsonRes = JSON(["type":"req","param1":resultTxt,"param2":txt])
                 responseCallback(jsonRes.object)
             }
             

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-typealias LocationUpdate = (location: CLLocation) -> ()
+typealias LocationUpdate = (issuccess:Bool,location: CLLocation?) -> ()
 
 class LocationManager: NSObject, CLLocationManagerDelegate
 {
@@ -38,7 +38,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     override init()
     {
         self.manager = CLLocationManager()
-        self.manager?.delegate
+        super.init()
+        
+        self.manager?.requestAlwaysAuthorization()
+        self.manager?.delegate = self
     }
     
     
@@ -63,8 +66,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     {
         if let l = listener {
             let location: CLLocation? = locations.last as? CLLocation
-            if (location == nil) { return }
-            l(location: location!)
+            if (location == nil) {
+                l(issuccess: true,location: nil)
+                return
+            }
+            l(issuccess: true,location: location!)
         }
     }
 }
