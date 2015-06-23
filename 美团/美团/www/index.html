@@ -1,36 +1,31 @@
-<!DOCTYPE html>
-
-<html>
-    <head>      
-       
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-       
-        <title></title>
-    </head>
-    <body>
-        <img id="image" width="100%" height="100%" />
-        <button id="callmapview">调用本地地图</button>
-        <br/>
-        <button id="getcurrentlocation">获取当前坐标</button>
-        <br/>
-        <button id="pushpage1">在当前窗口改变页面(www.baidu.com)</button>
-        <br/>
-        <button id="pushpage2">弹出新页面到新窗口(www.baidu.com)</button>
-        <br/>
-        <button id="refreshallsessions">刷新sesion,登录成功后调用</button>
-        <br/>
-        <button id="qrbtn">扫描二维码</button>
-        扫描到的二维码为：<div id="qrtxt"></div>
-         <br/>
-        <div id="fromswift">这里的文字是swift直接调用的</div>
-         <br/>
-        <button onclick="setimage()">选择图片</button>
-         <br/>
-        <script type="text/javascript">
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+   <body>
+			  <div id="fromswift">这里的文字是swift直接调用的,点击右上角测试按钮</div>
+				<br/>
+	           <button id="callmapview" class="button  button-full button-large button-positive">调用本地地图</button>
+			   </br>
+               <button id="getcurrentlocation" class="button  button-full button-large button-positive">获取当前地图坐标</button>
+			   获取当前坐标为：<div id="cotxt"></div>
+			   </br>
+			   <button id="pushpage1" class="button  button-full button-large button-royal">在当前窗口改变页面(www.baidu.com)</button>
+			   </br>
+ 			   <button id="pushpage2" class="button  button-full button-large button-royal">弹出新页面到新窗口(www.baidu.com)</button>
+				</br>
+			   <button id="refreshallsessions" class="button  button-full button-large button-dark">重新载入当前页(刷新session)</button>
+			   刷新结果为：<div id="refreshtxt"></div>
+				</br>
+			   <button id="qrbtn"  class="button  button-full button-large button-assertive">扫描二维码</button>
+			   扫描到的二维码为：<div id="qrtxt"></div>
+			   </br>
+ 			   <button onclick="setimage()" class="button  button-full button-large button-positive">选择图片</button>
+			   <img id="image" width="100%" height="100%" />
+			   
+			   <script type="text/javascript">
             function createjsonreq(types,p1,p2){
                 var jsonobj = {type:types,param1:p1,param2:p2};
                 return jsonobj;
@@ -69,7 +64,7 @@
                btnRefreshSessions.onclick = function(e) {
                e.preventDefault();
                bridge.callHandler('ras',createjsonreq('req','',''), function responseCallback(jsonobj) {
-                           var divtxt = document.getElementById('fromswift')
+                           var divtxt = document.getElementById('refreshtxt')
                            divtxt.innerText = jsonobj.param2
                     })
                }
@@ -78,8 +73,8 @@
                 btnpp1.onclick = function(e) {
                     e.preventDefault();
                     bridge.callHandler('pp',createjsonreq('req','http://www.baidu.com','self'), function responseCallback(jsonobj){
-                          var divtxt = document.getElementById('fromswift')
-                          divtxt.innerText = jsonobj.param2
+                         // var divtxt = document.getElementById('fromswift')
+                         // divtxt.innerText = jsonobj.param2
                     })
                 }
                 /*弹出新页面*/
@@ -87,8 +82,8 @@
                 btnpp2.onclick = function(e) {
                 e.preventDefault();
                 bridge.callHandler('pp',createjsonreq('req','http://www.baidu.com','blank'), function responseCallback(jsonobj) {
-                      var divtxt = document.getElementById('fromswift')
-                      divtxt.innerText = jsonobj.param2
+                     // var divtxt = document.getElementById('fromswift')
+                    //  divtxt.innerText = jsonobj.param2
                       })
                 }
                 /*获取当前位置*/
@@ -96,7 +91,7 @@
                btngcl.onclick = function(e) {
                e.preventDefault();
                bridge.callHandler('gcl',createjsonreq('req','',''), function responseCallback(jsonobj) {
-                      var divtxt = document.getElementById('fromswift')
+                      var divtxt = document.getElementById('cotxt')
                       divtxt.innerText = jsonobj.param2
                       })
                }
@@ -105,8 +100,8 @@
                btncmv.onclick = function(e) {
                e.preventDefault();
                bridge.callHandler('cmv',createjsonreq('req','',''), function responseCallback(jsonobj) {
-                                  var divtxt = document.getElementById('fromswift')
-                                  divtxt.innerText = jsonobj.param2
+                                //  var divtxt = document.getElementById('fromswift')
+                               //   divtxt.innerText = jsonobj.param2
                                   })
                }
                 /*来自swift直接调用*/
@@ -118,5 +113,5 @@
             })
                 
         </script>
-    </body>
-</html>
+ </body>
+  </html>
