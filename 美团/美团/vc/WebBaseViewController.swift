@@ -13,7 +13,7 @@ class WebBaseViewController: UIViewController {
     var bridge: WebViewJavascriptBridge!
     var url = ""
     var myWebView:UIWebView?
-
+    var qrCode:QRCodeHelper?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,13 +26,14 @@ class WebBaseViewController: UIViewController {
         bridge.registerHandler("qr" ,handler: {
             data, responseCallback in
             //点击QR二维码
-            var dvc = self.storyboard?.instantiateViewControllerWithIdentifier("qr") as! QRCodeViewController
+
             func onScanTxt(txt:String!)->Void{
                 let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
                 responseCallback(jsonRes.object)
             }
-            dvc.delegate =  onScanTxt
-            self.navigationController?.pushViewController(dvc, animated: true)
+            self.qrCode = QRCodeHelper()
+            self.qrCode?.delegate = onScanTxt
+            self.qrCode?.showView(self)
 
         })
         

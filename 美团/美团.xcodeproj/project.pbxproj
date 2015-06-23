@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		165D26761B2D23D5006927D8 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26751B2D23D5006927D8 /* QRCodeViewController.swift */; };
+		165D26761B2D23D5006927D8 /* QRCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26751B2D23D5006927D8 /* QRCodeHelper.swift */; };
 		165D267B1B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */; };
 		165D267C1B2D38B7006927D8 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D26791B2D38B7006927D8 /* Alamofire.swift */; };
 		165D267D1B2D38B7006927D8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */; };
@@ -23,6 +23,10 @@
 		165D269B1B2D92D5006927D8 /* UzysGroupViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D26911B2D92D5006927D8 /* UzysGroupViewCell.m */; };
 		165D269C1B2D92D5006927D8 /* UzysWrapperPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165D26931B2D92D5006927D8 /* UzysWrapperPickerController.m */; };
 		165D269E1B2E9429006927D8 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 165D269D1B2E9429006927D8 /* line.png */; };
+		16653B321B397CD9008E429C /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B2E1B397CD9008E429C /* QRCodeReader.swift */; };
+		16653B331B397CD9008E429C /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B2F1B397CD9008E429C /* QRCodeViewController.swift */; };
+		16653B341B397CD9008E429C /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B301B397CD9008E429C /* ReaderOverlayView.swift */; };
+		16653B351B397CD9008E429C /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B311B397CD9008E429C /* SwitchCameraButton.swift */; };
 		5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E561B391C8600B0D136 /* MapViewController.swift */; };
 		5F66F44B1B2FF45C009E4FDA /* WebBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */; };
 		5F66F4501B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F66F44E1B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt */; };
@@ -62,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		165D26751B2D23D5006927D8 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeViewController.swift; path = vc/QRCodeViewController.swift; sourceTree = "<group>"; };
+		165D26751B2D23D5006927D8 /* QRCodeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeHelper.swift; path = vc/QRCodeHelper.swift; sourceTree = "<group>"; };
 		165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
 		165D26791B2D38B7006927D8 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -86,6 +90,10 @@
 		165D26921B2D92D5006927D8 /* UzysWrapperPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UzysWrapperPickerController.h; sourceTree = "<group>"; };
 		165D26931B2D92D5006927D8 /* UzysWrapperPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UzysWrapperPickerController.m; sourceTree = "<group>"; };
 		165D269D1B2E9429006927D8 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		16653B2E1B397CD9008E429C /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
+		16653B2F1B397CD9008E429C /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		16653B301B397CD9008E429C /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
+		16653B311B397CD9008E429C /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		5F3B7E561B391C8600B0D136 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = vc/MapViewController.swift; sourceTree = "<group>"; };
 		5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebBaseViewController.swift; path = vc/WebBaseViewController.swift; sourceTree = "<group>"; };
 		5F66F44D1B2FFAD3009E4FDA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 		165D26771B2D38B7006927D8 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				16653B2D1B397CD9008E429C /* QRCodeReader */,
 				165D26781B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift */,
 				165D26791B2D38B7006927D8 /* Alamofire.swift */,
 				165D267A1B2D38B7006927D8 /* SwiftyJSON.swift */,
@@ -175,6 +184,17 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		16653B2D1B397CD9008E429C /* QRCodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				16653B2E1B397CD9008E429C /* QRCodeReader.swift */,
+				16653B2F1B397CD9008E429C /* QRCodeViewController.swift */,
+				16653B301B397CD9008E429C /* ReaderOverlayView.swift */,
+				16653B311B397CD9008E429C /* SwitchCameraButton.swift */,
+			);
+			path = QRCodeReader;
+			sourceTree = "<group>";
+		};
 		5F66F44C1B2FFAD3009E4FDA /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +210,7 @@
 			children = (
 				5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */,
 				5F3B7E561B391C8600B0D136 /* MapViewController.swift */,
-				165D26751B2D23D5006927D8 /* QRCodeViewController.swift */,
+				165D26751B2D23D5006927D8 /* QRCodeHelper.swift */,
 				5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */,
 				5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */,
 				5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */,
@@ -396,13 +416,14 @@
 				165D267B1B2D38B7006927D8 /* Alamofire-SwiftyJSON.swift in Sources */,
 				5FFF8CF51B1D723B007F4134 /* ViewController.swift in Sources */,
 				5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */,
-				165D26761B2D23D5006927D8 /* QRCodeViewController.swift in Sources */,
+				165D26761B2D23D5006927D8 /* QRCodeHelper.swift in Sources */,
 				5F66F44B1B2FF45C009E4FDA /* WebBaseViewController.swift in Sources */,
 				165D26991B2D92D5006927D8 /* UzysAssetsViewCell.m in Sources */,
 				165D26951B2D92D5006927D8 /* UzysAppearanceConfig.m in Sources */,
 				165D269C1B2D92D5006927D8 /* UzysWrapperPickerController.m in Sources */,
 				5FFF8D241B1D751D007F4134 /* RootNavigationViewController.swift in Sources */,
 				5F66F4511B2FFAD3009E4FDA /* WebViewJavascriptBridge.m in Sources */,
+				16653B351B397CD9008E429C /* SwitchCameraButton.swift in Sources */,
 				5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */,
 				165D267C1B2D38B7006927D8 /* Alamofire.swift in Sources */,
 				5FFF8D231B1D751D007F4134 /* MyUITabBarController.swift in Sources */,
@@ -417,9 +438,12 @@
 				5FFF8CF31B1D723B007F4134 /* AppDelegate.swift in Sources */,
 				5FE56C3C1B216F7A00BF7E52 /* TabIndexGengduoViewController.swift in Sources */,
 				5FFF8D161B1D73CA007F4134 /* WebViewProxy.m in Sources */,
+				16653B331B397CD9008E429C /* QRCodeViewController.swift in Sources */,
 				5FC5E0921B38FDF400FC20F7 /* Locationmanager.swift in Sources */,
 				5FFF8D281B1D7843007F4134 /* WebPageViewController.swift in Sources */,
+				16653B341B397CD9008E429C /* ReaderOverlayView.swift in Sources */,
 				165D26971B2D92D5006927D8 /* UzysAssetsPickerController.m in Sources */,
+				16653B321B397CD9008E429C /* QRCodeReader.swift in Sources */,
 				5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
