@@ -33,22 +33,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     }
     
     
-    //MARK: - Constructors
-    
-    override init()
-    {
-        self.manager = CLLocationManager()
-        super.init()
-        
-        self.manager?.requestAlwaysAuthorization()
-        self.manager?.delegate = self
-    }
-    
     
     //MARK: - Public methods
     
     func startMonitoringSignificantLocationChanges(listener: LocationUpdate)
     {
+        self.manager = CLLocationManager()
+        self.manager?.delegate = self
         self.manager!.startMonitoringSignificantLocationChanges()
         self.listener = listener
     }

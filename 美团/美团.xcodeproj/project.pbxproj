@@ -97,7 +97,7 @@
 		5FB3ABB81B301A15005DA1EB /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		5FC5E08D1B38F4A400FC20F7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5FC5E08F1B38F4B200FC20F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locationmanager.swift; path = "美团/Locationmanager.swift"; sourceTree = "<group>"; };
+		5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locationmanager.swift; sourceTree = "<group>"; };
 		5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexTuangouViewController.swift; path = vc/TabIndexTuangouViewController.swift; sourceTree = "<group>"; };
 		5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexShangjiaViewController.swift; path = vc/TabIndexShangjiaViewController.swift; sourceTree = "<group>"; };
 		5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexWodeViewController.swift; path = vc/TabIndexWodeViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +188,7 @@
 		5FE56C311B216DF800BF7E52 /* vc */ = {
 			isa = PBXGroup;
 			children = (
+				5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */,
 				5F3B7E561B391C8600B0D136 /* MapViewController.swift */,
 				165D26751B2D23D5006927D8 /* QRCodeViewController.swift */,
 				5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */,
@@ -204,7 +205,6 @@
 		5FFF8CE41B1D723B007F4134 = {
 			isa = PBXGroup;
 			children = (
-				5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */,
 				5FC5E08F1B38F4B200FC20F7 /* CoreLocation.framework */,
 				5FC5E08D1B38F4A400FC20F7 /* MapKit.framework */,
 				5FFF8CEF1B1D723B007F4134 /* 美团 */,

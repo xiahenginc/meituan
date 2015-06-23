@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456721871.528941"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "startMonitoringSignificantLocationChanges(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456721871.528941"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "stopMonitoringSignificantLocationChanges()"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456721871.528941"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456725882.4864"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456721871.528941"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "startMonitoringSignificantLocationChanges(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,27 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456721871.528941"
+            timestampString = "456731796.571128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "init()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x7f8e;&#x56e2;/&#x7f8e;&#x56e2;/Locationmanager.swift"
-            timestampString = "456725791.028397"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "5">
          </BreakpointContent>
