@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class WebBaseViewController: UIViewController {
     var bridge: WebViewJavascriptBridge!
     var url = ""
     var myWebView:UIWebView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -68,12 +70,53 @@ class WebBaseViewController: UIViewController {
                     }
                 }
             }
-
             var txt:String! = "OK"
             let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
             responseCallback(jsonRes.object)
+        })
+        //--------------------------------------------------------------------
+        bridge.registerHandler("gcl" ,handler: {
+            data, responseCallback in
+           
+            var txt:String! = "cannot get location"
+            LocationManager.getInstance().startMonitoringSignificantLocationChanges {
+                (location) -> () in
+                txt = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
+                println("\(txt)")
+                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+                responseCallback(jsonRes.object)
+            }
+            
+//            let geoCoder = CLGeocoder()
+//
+//            geoCoder.reverseGeocodeLocation(curLocation, completionHandler: { (placemarks:[AnyObject]!, error:NSError!) -> Void in
+//                var txt:String! = "OK"
+//                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+//                responseCallback(jsonRes.object)
+//                if error != nil{
+//                    txt = error.domain
+//                }else{                
+//                if placemarks != nil && placemarks.count > 0 {
+//                    let placemark = placemarks[0] as! CLPlacemark
+//    //                    let annotation = MKPointAnnotation()
+//    //                    annotation.title = self.restaurant.name
+//    //                    annotation.subtitle = self.restaurant.type
+//    //                    annotation.coordinate = placemark.location.coordinate
+//                        
+//
+//                    }
+//                }
+//                responseCallback(jsonRes.object)
+//                
+//            })
+
+
             
         })
+        //--------------------------------------------------------------------
+       
+
+
         
         var btnTest = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         btnTest.frame = CGRectMake(0, 0, 64, 32);

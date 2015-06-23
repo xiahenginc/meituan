@@ -13,6 +13,8 @@
     </head>
     <body>
         <img id="image" width="100%" height="100%" />
+        <button id="getcurrentlocation">获取当前坐标</button>
+        <br/>
         <button id="pushpage1">在当前窗口改变页面(www.baidu.com)</button>
         <br/>
         <button id="pushpage2">弹出新页面到新窗口(www.baidu.com)</button>
@@ -87,6 +89,16 @@
                       divtxt.innerText = jsonobj.param2
                       })
                 }
+                /**/
+               var btngcl = document.getElementById('getcurrentlocation')
+               btngcl.onclick = function(e) {
+               e.preventDefault();
+               bridge.callHandler('gcl',createjsonreq('req','',''), function responseCallback(jsonobj) {
+                      var divtxt = document.getElementById('fromswift')
+                      divtxt.innerText = jsonobj.param2
+                      })
+               }
+             
                 /*来自swift直接调用*/
                bridge.registerHandler('calljs', function(jsonobj, responseCallback) {
                   var divtxt = document.getElementById('fromswift')

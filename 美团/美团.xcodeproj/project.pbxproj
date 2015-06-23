@@ -30,6 +30,9 @@
 		5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1B1B257445001A314A /* Default@2x.png */; };
 		5F6A0D1E1B257F2D001A314A /* SearchIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */; };
 		5FB3ABB91B301A15005DA1EB /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB3ABB81B301A15005DA1EB /* empty.png */; };
+		5FC5E08E1B38F4A400FC20F7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC5E08D1B38F4A400FC20F7 /* MapKit.framework */; };
+		5FC5E0901B38F4B200FC20F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC5E08F1B38F4B200FC20F7 /* CoreLocation.framework */; };
+		5FC5E0921B38FDF400FC20F7 /* Locationmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */; };
 		5FE56C361B216F3900BF7E52 /* TabIndexTuangouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */; };
 		5FE56C381B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */; };
 		5FE56C3A1B216F6900BF7E52 /* TabIndexWodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */; };
@@ -90,6 +93,9 @@
 		5F6A0D1B1B257445001A314A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5F6A0D1D1B257F2D001A314A /* SearchIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchIndexViewController.swift; path = vc/SearchIndexViewController.swift; sourceTree = "<group>"; };
 		5FB3ABB81B301A15005DA1EB /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		5FC5E08D1B38F4A400FC20F7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5FC5E08F1B38F4B200FC20F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locationmanager.swift; path = "美团/Locationmanager.swift"; sourceTree = "<group>"; };
 		5FE56C351B216F3900BF7E52 /* TabIndexTuangouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexTuangouViewController.swift; path = vc/TabIndexTuangouViewController.swift; sourceTree = "<group>"; };
 		5FE56C371B216F4B00BF7E52 /* TabIndexShangjiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexShangjiaViewController.swift; path = vc/TabIndexShangjiaViewController.swift; sourceTree = "<group>"; };
 		5FE56C391B216F6900BF7E52 /* TabIndexWodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabIndexWodeViewController.swift; path = vc/TabIndexWodeViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC5E0901B38F4B200FC20F7 /* CoreLocation.framework in Frameworks */,
+				5FC5E08E1B38F4A400FC20F7 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +201,9 @@
 		5FFF8CE41B1D723B007F4134 = {
 			isa = PBXGroup;
 			children = (
+				5FC5E0911B38FDF400FC20F7 /* Locationmanager.swift */,
+				5FC5E08F1B38F4B200FC20F7 /* CoreLocation.framework */,
+				5FC5E08D1B38F4A400FC20F7 /* MapKit.framework */,
 				5FFF8CEF1B1D723B007F4134 /* 美团 */,
 				5FFF8D051B1D723B007F4134 /* 美团Tests */,
 				5FFF8CEE1B1D723B007F4134 /* Products */,
@@ -403,6 +414,7 @@
 				5FFF8CF31B1D723B007F4134 /* AppDelegate.swift in Sources */,
 				5FE56C3C1B216F7A00BF7E52 /* TabIndexGengduoViewController.swift in Sources */,
 				5FFF8D161B1D73CA007F4134 /* WebViewProxy.m in Sources */,
+				5FC5E0921B38FDF400FC20F7 /* Locationmanager.swift in Sources */,
 				5FFF8D281B1D7843007F4134 /* WebPageViewController.swift in Sources */,
 				165D26971B2D92D5006927D8 /* UzysAssetsPickerController.m in Sources */,
 			);
