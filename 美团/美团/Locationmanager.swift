@@ -28,21 +28,25 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     {
         if (SharedInstance.instance == nil)  {
             SharedInstance.instance = LocationManager()
+            SharedInstance.instance?.initManager()
         }
         return SharedInstance.instance!
     }
     
+    func initManager(){
+        self.manager = CLLocationManager()
+        self.manager?.delegate = self
+        self.manager?.desiredAccuracy=kCLLocationAccuracyBest
+        self.manager?.distanceFilter=kCLDistanceFilterNone
+        self.manager?.requestWhenInUseAuthorization()
+    }
     
     
     //MARK: - Public methods
     
     func startMonitoringSignificantLocationChanges(listener: LocationUpdate)
     {
-        self.manager = CLLocationManager()
-        self.manager?.delegate = self
-        self.manager?.desiredAccuracy=kCLLocationAccuracyBest
-        self.manager?.distanceFilter=kCLDistanceFilterNone
-        self.manager?.requestWhenInUseAuthorization()
+
         self.manager?.startMonitoringSignificantLocationChanges()
         self.manager?.startUpdatingLocation()
         self.listener = listener

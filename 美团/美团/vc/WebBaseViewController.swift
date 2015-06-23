@@ -82,13 +82,17 @@ class WebBaseViewController: UIViewController {
             var txt:String! = "不能获取坐标"
             LocationManager.getInstance().startMonitoringSignificantLocationChanges {
                 (issuccess,location) -> () in
+                dispatch_async(dispatch_get_main_queue(), {
+                    LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
+                })
+                
                 var resultTxt:String!="failed"
                 if issuccess {
                     txt = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
                     resultTxt = "success"
                     println("\(txt)")
                 }
-                LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
+                
                 let jsonRes = JSON(["type":"res","param1":resultTxt,"param2":txt])
                 responseCallback(jsonRes.object)
             }
