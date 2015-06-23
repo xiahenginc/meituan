@@ -28,7 +28,7 @@ class WebBaseViewController: UIViewController {
             //点击QR二维码
 
             func onScanTxt(txt:String!)->Void{
-                let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+                let jsonRes = JSON(["type":"res","param1":"success","param2":txt])
                 responseCallback(jsonRes.object)
             }
             self.qrCode = QRCodeHelper()
@@ -45,7 +45,7 @@ class WebBaseViewController: UIViewController {
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "onLoginRefresh:", name: "onLoginRefresh", object: nil)
             })
             var txt:String! = "OK"
-            let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+            let jsonRes = JSON(["type":"res","param1":"success","param2":txt])
             responseCallback(jsonRes.object)
             
         })
@@ -72,7 +72,7 @@ class WebBaseViewController: UIViewController {
                 }
             }
             var txt:String! = "OK"
-            let jsonRes = JSON(["type":"req","param1":"success","param2":txt])
+            let jsonRes = JSON(["type":"res","param1":"success","param2":txt])
             responseCallback(jsonRes.object)
         })
         //--------------------------------------------------------------------
@@ -89,7 +89,7 @@ class WebBaseViewController: UIViewController {
                     println("\(txt)")
                 }
                 LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
-                let jsonRes = JSON(["type":"req","param1":resultTxt,"param2":txt])
+                let jsonRes = JSON(["type":"res","param1":resultTxt,"param2":txt])
                 responseCallback(jsonRes.object)
             }
             

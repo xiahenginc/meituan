@@ -40,7 +40,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     {
         self.manager = CLLocationManager()
         self.manager?.delegate = self
-        self.manager!.startMonitoringSignificantLocationChanges()
+        self.manager?.desiredAccuracy=kCLLocationAccuracyBest
+        self.manager?.distanceFilter=kCLDistanceFilterNone
+        self.manager?.requestWhenInUseAuthorization()
+        self.manager?.startMonitoringSignificantLocationChanges()
+        self.manager?.startUpdatingLocation()
         self.listener = listener
     }
     
@@ -58,7 +62,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
         if let l = listener {
             let location: CLLocation? = locations.last as? CLLocation
             if (location == nil) {
-                l(issuccess: true,location: nil)
+                l(issuccess: false,location: nil)
                 return
             }
             l(issuccess: true,location: location!)

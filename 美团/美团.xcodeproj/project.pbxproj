@@ -574,7 +574,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nanjing Xiaheng Network System Co., Ltd. (24N474AU9T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nanjing Xiaheng Network System Co., Ltd. (24N474AU9T)";
 				INFOPLIST_FILE = "美团/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";
@@ -589,7 +589,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nanjing Xiaheng Network System Co., Ltd. (24N474AU9T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nanjing Xiaheng Network System Co., Ltd. (24N474AU9T)";
 				INFOPLIST_FILE = "美团/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";
