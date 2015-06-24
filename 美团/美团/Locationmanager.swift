@@ -38,7 +38,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
         self.manager?.delegate = self
         self.manager?.desiredAccuracy=kCLLocationAccuracyBest
         self.manager?.distanceFilter=kCLDistanceFilterNone
-        self.manager?.requestWhenInUseAuthorization()
+        //self.manager?.requestWhenInUseAuthorization()
     }
     
     
@@ -46,7 +46,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     
     func startMonitoringSignificantLocationChanges(listener: LocationUpdate)
     {
-
+        println("startMonitoringSignificantLocationChanges")
         self.manager?.startMonitoringSignificantLocationChanges()
         self.manager?.startUpdatingLocation()
         self.listener = listener
@@ -54,7 +54,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     
     func stopMonitoringSignificantLocationChanges()
     {
-        self.manager!.stopMonitoringSignificantLocationChanges()
+        println("stopMonitoringSignificantLocationChanges")
+      //  self.manager?.stopUpdatingLocation()
+        self.manager?.stopMonitoringSignificantLocationChanges()
         self.listener = nil
     }
     
@@ -63,6 +65,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
+        self.manager?.stopUpdatingLocation()
         if let l = listener {
             let location: CLLocation? = locations.last as? CLLocation
             if (location == nil) {

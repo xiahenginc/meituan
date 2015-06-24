@@ -16,13 +16,36 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         super.viewDidLoad()
         self.mapView.delegate = self
         
+           }
+    deinit {
+        println("MapViewController deinit...")
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        startLocation()
+
+    }
+    override func viewDidDisappear(animated: Bool){
+         LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
+    }
+    
+    func startLocation(){
+        
         LocationManager.getInstance().startMonitoringSignificantLocationChanges {
             (issuccess,location) -> () in
+            
+            println("startMonitoringSignificantLocationChanges callback...")
             var resultTxt:String!="failed"
             if issuccess {
                 
                 let geoCoder = CLGeocoder()
                 geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks:[AnyObject]!, error:NSError!) -> Void in
+                    println("reverseGeocodeLocation callback...")
                     if error != nil{
                         println(error)
                         return
@@ -40,21 +63,14 @@ class MapViewController: UIViewController,MKMapViewDelegate {
                     }
                     
                 })
-
-              
+                
+                
             }
-            
+           
+
         }
+        
 
-        // Do any additional setup after loading the view.
-    }
-    deinit {
-        LocationManager.getInstance().stopMonitoringSignificantLocationChanges()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
