@@ -15,20 +15,22 @@ import AVFoundation
 typealias onScanedText = (String!) ->Void
 
 class QRCodeHelper: QRCodeReaderViewControllerDelegate {
-    var reader = QRCodeReaderViewController(metadataObjectTypes: [AVMetadataObjectTypeAztecCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeUPCECode])
+    var reader:QRCodeReaderViewController?
     var delegate:onScanedText?
     var vc:UIViewController?
     func showView(vc:UIViewController!) {
         self.vc = vc
+        reader  = QRCodeReaderViewController(metadataObjectTypes: [AVMetadataObjectTypeAztecCode, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeUPCECode])
         if QRCodeReader.supportsMetadataObjectTypes() {
-            reader.modalPresentationStyle = .FormSheet
-            reader.delegate               = self
+
+            reader?.modalPresentationStyle = .FormSheet
+            reader?.delegate               = self
             
-            reader.completionBlock = { (result: String?) in
+            reader?.completionBlock = { (result: String?) in
                 println("Completion with result: \(result)")
             }
             
-            self.vc!.navigationController?.pushViewController(reader, animated: true)
+            self.vc!.navigationController?.pushViewController(reader!, animated: true)
             //self.vc!.presentViewController(reader, animated: true, completion: nil)
             
         }
