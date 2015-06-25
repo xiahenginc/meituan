@@ -81,6 +81,7 @@ class RootNavigationViewController: UINavigationController ,UINavigationControll
         
             }
             if(viewController is SearchIndexViewController){
+                self.navigationBarHidden = false
                 var btnBack = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
                 btnBack.frame = CGRectMake(0, 0, 32, 32);
                 btnBack.setBackgroundImage(UIImage(named: "fh"), forState: UIControlState.Normal)
