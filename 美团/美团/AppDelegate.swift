@@ -161,5 +161,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return result
     }
 
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool{
+        return TencentOAuth.HandleOpenURL(url)
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return TencentOAuth.HandleOpenURL(url)
+    }
 }
 

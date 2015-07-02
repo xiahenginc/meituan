@@ -11,4 +11,5 @@
 #import "WebViewProxy.h"
 #import "WebViewJavascriptBridge.h"
 #import "UzysAssetsPickerController.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 #endif
