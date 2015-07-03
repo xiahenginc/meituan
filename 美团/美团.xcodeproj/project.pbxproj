@@ -618,7 +618,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f572c800-c703-423e-a733-3172572c793d";
+				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";
 				SWIFT_OBJC_BRIDGING_HEADER = "美团/meituan-Bridging-Header.h";
 			};
 			name = Debug;
@@ -638,7 +638,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f572c800-c703-423e-a733-3172572c793d";
+				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";
 				SWIFT_OBJC_BRIDGING_HEADER = "美团/meituan-Bridging-Header.h";
 			};
 			name = Release;

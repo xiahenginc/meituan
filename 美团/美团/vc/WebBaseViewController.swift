@@ -197,7 +197,7 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
     
     func tencentDidLogin()
     {
-        var txt = "{\"accessToken\":\(self._tencentOAuth!.accessToken),\"openId\":\(self._tencentOAuth!.openId),\"expirationDate\":\(self._tencentOAuth!.expirationDate.description)}"
+        var txt = "{\"accessToken\":\"\(self._tencentOAuth!.accessToken)\",\"openId\":\"\(self._tencentOAuth!.openId)\",\"expirationDate\":\"\(self._tencentOAuth!.expirationDate.description)\"}"
 //        
       //  var txt = "\(self._tencentOAuth?.accessToken),\(self._tencentOAuth?.openId)"
         let jsonRes = JSON(["type":"res","param1":"success","param2":txt])
