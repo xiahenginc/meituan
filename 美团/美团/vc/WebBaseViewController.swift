@@ -110,7 +110,7 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
             self.navigationController?.pushViewController(dvc, animated: true)
         })
         //--------------------------------------------------------------------
-        //qq是否安装
+        //qq是否安装,待废弃
         bridge.registerHandler("isqqinstalled",handler: {
             data, responseCallback in
             var txt = "false"
@@ -122,7 +122,42 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
             
 
         })
+        //--------------------------------------------------------------------
+        //qq wx是否安装
+        bridge.registerHandler("isinstalled",handler: {
+            data, responseCallback in
+            let json = JSON(data)
+            if let paramname = json["param1"].string{
+                
+            var txt = "false"
+                
+            if paramname == "qq"{
+                if TencentOAuth.iphoneQQInstalled() == true{
+                    txt = "true"
+                }
+            }
+            else if paramname == "wx"{
+                if WXApi.isWXAppInstalled() == true{
+                    txt = "true"
+                }
+            }
 
+            let jsonRes = JSON(["type":"res","param1":"success","param2":txt])
+            responseCallback(jsonRes.object)
+            }
+            
+        })
+        //--------------------------------------------------------------------
+        //wx自动登录
+        bridge.registerHandler("wxautologin",handler: {
+            data, responseCallback in
+            let json = JSON(data)
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDel.wxlogin(json, vc: self, block: {
+                jsonRes in
+                responseCallback(jsonRes.object)
+            })
+        })
         //--------------------------------------------------------------------
         //qq自动登录
         bridge.registerHandler("qqautologin",handler: {

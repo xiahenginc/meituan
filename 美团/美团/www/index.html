@@ -7,13 +7,19 @@
    <body>
 			  <div id="fromswift">这里的文字是swift直接调用的,点击右上角测试按钮</div>
               <br/>
-              <button id="isqqinstalled" class="button  button-full button-large button-positive">检查QQ是否安装</button>
+              <button id="isqqinstalled" class="button  button-full button-large button-royal">检查QQ是否安装</button>
               测试结果为：<div id="isqqinstalledresult"></div>
               </br>
+              <button id="iswxinstalled" class="button  button-full button-large button-royal">检查微信是否安装</button>
+              测试结果为：<div id="iswxinstalledresult"></div>
+              </br>
 				<br/>
-	           <button id="callqqautologin" class="button  button-full button-large button-positive">QQ一键登录</button>
-               测试结果为：<div id="qqautologinresult"></div>
-			   </br>
+                <button id="callqqautologin" class="button  button-full button-large button-positive">QQ一键登录</button>
+                测试结果为：<div id="qqautologinresult"></div>
+                </br>
+                <button id="callwxautologin" class="button  button-full button-large button-positive">微信一键登录</button>
+                测试结果为：<div id="wxautologinresult"></div>
+                </br>
                <br/>
                <button id="callmapview" class="button  button-full button-large button-positive">调用本地地图</button>
                </br>
@@ -57,16 +63,36 @@
                 /*初始化代码,不管他,但一定要写*/
                 bridge.init(function(message, responseCallback) {
                 })
+               /*检查微信是否安装*/
+               var button = document.getElementById('iswxinstalled')
+               button.onclick = function(e) {
+               e.preventDefault();
+               //createjsonreq('req','qr','','')
+               bridge.callHandler('isinstalled',createjsonreq('req','wx',''),function responseCallback(jsonobj) {
+                                  var divtxt = document.getElementById('iswxinstalledresult')
+                                  divtxt.innerText =  jsonobj.param2
+                                  })
+               }
                /*检查QQ是否安装*/
                var button = document.getElementById('isqqinstalled')
                button.onclick = function(e) {
                e.preventDefault();
                //createjsonreq('req','qr','','')
-               bridge.callHandler('isqqinstalled',createjsonreq('req','',''),function responseCallback(jsonobj) {
+               bridge.callHandler('isinstalled',createjsonreq('req','qq',''),function responseCallback(jsonobj) {
                                   var divtxt = document.getElementById('isqqinstalledresult')
                                   divtxt.innerText =  jsonobj.param2
                                   })
                }
+               /*点击微信一键登录，参数1:唯一ID，参数2:openID*/
+               var button = document.getElementById('callwxautologin')
+               button.onclick = function(e) {
+               e.preventDefault();
+               bridge.callHandler('wxautologin',createjsonreq('req','grwweb.xiaheng.net','101220859'),function responseCallback(jsonobj) {
+                                  var divtxt = document.getElementById('wxautologinresult')
+                                  divtxt.innerText =  jsonobj.param1 + ":" + jsonobj.param2
+                                  })
+               }
+
                /*点击QQ一键登录*/
                var button = document.getElementById('callqqautologin')
                button.onclick = function(e) {

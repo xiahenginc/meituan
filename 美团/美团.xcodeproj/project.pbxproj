@@ -36,6 +36,7 @@
 		16653B331B397CD9008E429C /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B2F1B397CD9008E429C /* QRCodeViewController.swift */; };
 		16653B341B397CD9008E429C /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B301B397CD9008E429C /* ReaderOverlayView.swift */; };
 		16653B351B397CD9008E429C /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B311B397CD9008E429C /* SwitchCameraButton.swift */; };
+		1673F9B31B4A6C5400300A8F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1673F9B01B4A6C5400300A8F /* libWeChatSDK.a */; };
 		5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E561B391C8600B0D136 /* MapViewController.swift */; };
 		5F66F44B1B2FF45C009E4FDA /* WebBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */; };
 		5F66F4501B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F66F44E1B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt */; };
@@ -112,6 +113,9 @@
 		16653B2F1B397CD9008E429C /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		16653B301B397CD9008E429C /* ReaderOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderOverlayView.swift; sourceTree = "<group>"; };
 		16653B311B397CD9008E429C /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		1673F9B01B4A6C5400300A8F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		1673F9B11B4A6C5400300A8F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		1673F9B21B4A6C5400300A8F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		5F3B7E561B391C8600B0D136 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = vc/MapViewController.swift; sourceTree = "<group>"; };
 		5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebBaseViewController.swift; path = vc/WebBaseViewController.swift; sourceTree = "<group>"; };
 		5F66F44D1B2FFAD3009E4FDA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1673F9B31B4A6C5400300A8F /* libWeChatSDK.a in Frameworks */,
 				1640492A1B457F35008EE664 /* libz.dylib in Frameworks */,
 				164049281B457F2B008EE664 /* libstdc++.dylib in Frameworks */,
 				164049261B457F22008EE664 /* CoreTelephony.framework in Frameworks */,
@@ -222,6 +227,16 @@
 			path = QRCodeReader;
 			sourceTree = "<group>";
 		};
+		1673F9AF1B4A6C5400300A8F /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				1673F9B01B4A6C5400300A8F /* libWeChatSDK.a */,
+				1673F9B11B4A6C5400300A8F /* WXApi.h */,
+				1673F9B21B4A6C5400300A8F /* WXApiObject.h */,
+			);
+			path = SDKExport;
+			sourceTree = "<group>";
+		};
 		5F66F44C1B2FFAD3009E4FDA /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +267,7 @@
 		5FFF8CE41B1D723B007F4134 = {
 			isa = PBXGroup;
 			children = (
+				1673F9AF1B4A6C5400300A8F /* SDKExport */,
 				164049291B457F35008EE664 /* libz.dylib */,
 				164049271B457F2B008EE664 /* libstdc++.dylib */,
 				164049251B457F22008EE664 /* CoreTelephony.framework */,
@@ -614,8 +630,12 @@
 					"$(PROJECT_DIR)/美团/thirdparty",
 				);
 				INFOPLIST_FILE = "美团/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";
@@ -634,8 +654,12 @@
 					"$(PROJECT_DIR)/美团/thirdparty",
 				);
 				INFOPLIST_FILE = "美团/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3a5a036c-8718-41bf-afc3-857c92dfa0af";

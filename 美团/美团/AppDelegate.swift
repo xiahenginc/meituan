@@ -8,8 +8,10 @@
 
 import UIKit
 
+typealias onWxLoginResult = (JSON!) ->Void
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
 
     var window: UIWindow?
     
@@ -160,12 +162,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return result
     }
+    
+    var wxloginResult:onWxLoginResult?
+    
+    func wxlogin(reqJson:JSON,vc:UIViewController,block:onWxLoginResult){
+        self.wxloginResult = block
+        var req = SendAuthReq()
+        req.scope = "snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact"
+        req.state = reqJson["param1"].string
+        req.openID = reqJson["param2"].string
+        WXApi.sendAuthReq(req, viewController: vc, delegate: self)
+    }
 
+    func onReq(req: BaseReq!) {
+        println("onReq called")
+    }
+    func onResp(resp: BaseResp!) {
+        println("onResp called")
+        
+        if resp is SendAuthResp{
+            let result = resp as! SendAuthResp
+            var txtContent = ""
+            var txtResult = "failed"
+            if result.errCode == 0{
+                txtResult = "success"
+                txtContent =  "{\"state\":\"\(result.state)\",\"code\":\"\(result.code)\",\"lang\":\"\(result.lang)\",\"country\":\"\(result.country)\"}"
+            }
+            else{
+                txtContent =  "{\"errCode\":\"\(result.errCode)\",\"errStr\":\"\(result.errStr)\"}"
+            }
+
+            let jsonRes = JSON(["type":"res","param1":txtResult,"param2":txtContent])
+            self.wxloginResult?(jsonRes)
+        }
+    }
+    
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool{
-        return TencentOAuth.HandleOpenURL(url)
+        if url.scheme == "wx8ff03d60decfa26a" {
+            return WXApi.handleOpenURL(url, delegate: self)
+        }
+        else if url.scheme == "tencent101220859" {
+            return TencentOAuth.HandleOpenURL(url)
+        }
+        return true
+        
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        return TencentOAuth.HandleOpenURL(url)
+        if url.scheme == "wx8ff03d60decfa26a" {
+            return WXApi.handleOpenURL(url, delegate: self)
+        }
+        else if url.scheme == "tencent101220859" {
+            return TencentOAuth.HandleOpenURL(url)
+        }
+        return true
     }
 }
 
