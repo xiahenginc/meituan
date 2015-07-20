@@ -223,17 +223,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
                 var resultTxt:String!="failed"
                 var txt:String! = "支付失败"
                 if (result != nil) {
+                    print("\(result)")
+                    txt = result["memo"] as! String
                     var status = result["resultStatus"] as! NSObject
                     if ("\(status)" == "9000") {
-                        txt = "支付成功"
+                        
                         resultTxt = "success"
-                    } else {
-                        //
-                        txt = "支付失败"
                     }
-                } else {
-                    txt = "支付失败"
                 }
+                else{
+                    txt =  "无法获取结果"
+                }
+
                 let jsonRes = JSON(["type":"res","param1":resultTxt,"param2":txt])
                 self.alipayResult?(jsonRes)
 
