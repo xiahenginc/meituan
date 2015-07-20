@@ -37,6 +37,8 @@
 		16653B341B397CD9008E429C /* ReaderOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B301B397CD9008E429C /* ReaderOverlayView.swift */; };
 		16653B351B397CD9008E429C /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16653B311B397CD9008E429C /* SwitchCameraButton.swift */; };
 		1673F9B31B4A6C5400300A8F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1673F9B01B4A6C5400300A8F /* libWeChatSDK.a */; };
+		16F719181B5A518300385D61 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16F719161B5A518300385D61 /* AlipaySDK.bundle */; };
+		16F719191B5A518300385D61 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F719171B5A518300385D61 /* AlipaySDK.framework */; };
 		5F3B7E571B391C8600B0D136 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B7E561B391C8600B0D136 /* MapViewController.swift */; };
 		5F66F44B1B2FF45C009E4FDA /* WebBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */; };
 		5F66F4501B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F66F44E1B2FFAD3009E4FDA /* WebViewJavascriptBridge.js.txt */; };
@@ -116,6 +118,8 @@
 		1673F9B01B4A6C5400300A8F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		1673F9B11B4A6C5400300A8F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		1673F9B21B4A6C5400300A8F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		16F719161B5A518300385D61 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = "美团/thirdparty/AlipaySDK.bundle"; sourceTree = "<group>"; };
+		16F719171B5A518300385D61 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlipaySDK.framework; path = "美团/thirdparty/AlipaySDK.framework"; sourceTree = "<group>"; };
 		5F3B7E561B391C8600B0D136 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = vc/MapViewController.swift; sourceTree = "<group>"; };
 		5F66F44A1B2FF45C009E4FDA /* WebBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebBaseViewController.swift; path = vc/WebBaseViewController.swift; sourceTree = "<group>"; };
 		5F66F44D1B2FFAD3009E4FDA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				1640491E1B457DFF008EE664 /* libiconv.dylib in Frameworks */,
 				1640491C1B457DEF008EE664 /* Security.framework in Frameworks */,
 				164049161B452CB7008EE664 /* TencentOpenAPI.framework in Frameworks */,
+				16F719191B5A518300385D61 /* AlipaySDK.framework in Frameworks */,
 				5FC5E0901B38F4B200FC20F7 /* CoreLocation.framework in Frameworks */,
 				5FC5E08E1B38F4A400FC20F7 /* MapKit.framework in Frameworks */,
 			);
@@ -267,6 +272,8 @@
 		5FFF8CE41B1D723B007F4134 = {
 			isa = PBXGroup;
 			children = (
+				16F719161B5A518300385D61 /* AlipaySDK.bundle */,
+				16F719171B5A518300385D61 /* AlipaySDK.framework */,
 				1673F9AF1B4A6C5400300A8F /* SDKExport */,
 				164049291B457F35008EE664 /* libz.dylib */,
 				164049271B457F2B008EE664 /* libstdc++.dylib */,
@@ -443,6 +450,7 @@
 				5F6A0D1C1B257445001A314A /* Default@2x.png in Resources */,
 				165D269E1B2E9429006927D8 /* line.png in Resources */,
 				5FFF8CF81B1D723B007F4134 /* Main.storyboard in Resources */,
+				16F719181B5A518300385D61 /* AlipaySDK.bundle in Resources */,
 				5F6A0D1A1B257436001A314A /* Default-568h@2x.png in Resources */,
 				5FFF8CFD1B1D723B007F4134 /* LaunchScreen.xib in Resources */,
 				5FFF8CFA1B1D723B007F4134 /* Images.xcassets in Resources */,

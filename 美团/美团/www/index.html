@@ -7,6 +7,9 @@
    <body>
 			  <div id="fromswift">这里的文字是swift直接调用的,点击右上角测试按钮</div>
               <br/>
+              <button id="callalipay" class="button  button-full button-large button-royal">使用支付宝支付</button>
+              测试结果为：<div id="callalipayresult"></div>
+              </br>
               <button id="isqqinstalled" class="button  button-full button-large button-royal">检查QQ是否安装</button>
               测试结果为：<div id="isqqinstalledresult"></div>
               </br>
@@ -87,7 +90,7 @@
                var button = document.getElementById('callwxautologin')
                button.onclick = function(e) {
                e.preventDefault();
-               bridge.callHandler('wxautologin',createjsonreq('req','grwweb.xiaheng.net','101220859'),function responseCallback(jsonobj) {
+               bridge.callHandler('wxautologin',createjsonreq('req','grwweb.xiaheng.net','wx53638f36dd87415a'),function responseCallback(jsonobj) {
                                   var divtxt = document.getElementById('wxautologinresult')
                                   divtxt.innerText =  jsonobj.param1 + ":" + jsonobj.param2
                                   })
@@ -100,6 +103,16 @@
                //createjsonreq('req','qr','','')
                bridge.callHandler('qqautologin',createjsonreq('req','101220859','www.grw.com18.cn'),function responseCallback(jsonobj) {
                                   var divtxt = document.getElementById('qqautologinresult')
+                                  divtxt.innerText =  jsonobj.param1 + ":" + jsonobj.param2
+                                  })
+               }
+               /*点击支付宝支付*/
+               var button = document.getElementById('callalipay')
+               button.onclick = function(e) {
+               e.preventDefault();
+               //createjsonreq('req','qr','','')
+               bridge.callHandler('alipaygrwhandler',createjsonreq('req','thisisalonglongstring',''),function responseCallback(jsonobj) {
+                                  var divtxt = document.getElementById('callalipayresult')
                                   divtxt.innerText =  jsonobj.param1 + ":" + jsonobj.param2
                                   })
                }

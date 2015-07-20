@@ -102,6 +102,45 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
             
         })
         //--------------------------------------------------------------------
+        bridge.registerHandler("alipaygrwhandler" ,handler: {
+            data, responseCallback in
+           
+            var appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDel.alipayResult = {
+                jsonRes in
+                responseCallback(jsonRes.object)
+            }
+
+            let json = JSON(data)
+            if let orderinfo = json["param1"].string{
+                //通过支付宝支付
+//                var orderId = data["id"] as? String
+//                var orderInfo = data["stringToSign"] as String
+//                var sign = data["sign"] as String
+                //"\(orderInfo)&sign=\"\(sign)\"&sign_type=\"RSA\""
+                AlipaySDK.defaultService().payOrder(orderinfo, fromScheme: "alipaygrw") { (result: [NSObject: AnyObject]!) -> Void in
+                    var resultTxt:String!="failed"
+                    var txt:String! = "支付失败"
+                    if (result != nil) {
+                        var status = result["resultStatus"] as! NSObject
+                        if ("\(status)" == "9000") {
+                            txt = "支付成功"
+                            resultTxt = "success"
+                        } else {
+                            //                      
+                            txt = "支付失败"
+                        }
+                    } else {
+                         txt = "支付失败"
+                    }
+                    let jsonRes = JSON(["type":"res","param1":resultTxt,"param2":txt])
+                    responseCallback(jsonRes.object)
+
+                }
+
+            }
+        })
+        //--------------------------------------------------------------------
         //调用地图
         bridge.registerHandler("cmv" ,handler: {
             data, responseCallback in

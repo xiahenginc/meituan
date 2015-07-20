@@ -164,7 +164,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
     }
     
     var wxloginResult:onWxLoginResult?
-    
+    var alipayResult:onWxLoginResult?
+   
     func wxlogin(reqJson:JSON,vc:UIViewController,block:onWxLoginResult){
         self.wxloginResult = block
         var req = SendAuthReq()
@@ -198,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool{
-        if url.scheme == "wx8ff03d60decfa26a" {
+        if url.scheme == "wx53638f36dd87415a" {
             return WXApi.handleOpenURL(url, delegate: self)
         }
         else if url.scheme == "tencent101220859" {
@@ -208,11 +209,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        if url.scheme == "wx8ff03d60decfa26a" {
+        if url.scheme == "wx53638f36dd87415a" {
             return WXApi.handleOpenURL(url, delegate: self)
         }
         else if url.scheme == "tencent101220859" {
             return TencentOAuth.HandleOpenURL(url)
+        }
+        
+        if url.host == "safepay" {
+            AlipaySDK.defaultService().processOrderWithPaymentResult(url, standbyCallback: {(result) -> Void in
+                print(result as NSDictionary)
+                
+                var resultTxt:String!="failed"
+                var txt:String! = "支付失败"
+                if (result != nil) {
+                    var status = result["resultStatus"] as! NSObject
+                    if ("\(status)" == "9000") {
+                        txt = "支付成功"
+                        resultTxt = "success"
+                    } else {
+                        //
+                        txt = "支付失败"
+                    }
+                } else {
+                    txt = "支付失败"
+                }
+                let jsonRes = JSON(["type":"res","param1":resultTxt,"param2":txt])
+                self.alipayResult?(jsonRes)
+
+            })
+            return true
         }
         return true
     }

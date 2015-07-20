@@ -13,4 +13,5 @@
 #import "UzysAssetsPickerController.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import <AlipaySDK/AlipaySDK.h>
 #endif
