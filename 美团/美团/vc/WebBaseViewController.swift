@@ -113,6 +113,8 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
 
             let json = JSON(data)
             if let orderinfo = json["param1"].string{
+                
+//                var pporderinfo = "partner=\"2088021265636683\"&seller_id=\"guorouwang@126.com\"&out_trade_no=\"D143827093805526\"&subject=\"test\"&body=\"test\"&total_fee=\"0.01\"&notify_url=\"http://notify.msp.hk/notify.htm\"&service=\"mobile.securitypay.pay\"&payment_type=\"1\"&_input_charset=\"utf-8\"&it_b_pay=\"30m\"&sign=\"qU3fPl4841gPaVdiPHZaM1ymU1%2BLkzKbJQf3uZxaWVE%2BRWm%2B9llCjT2d8AJanBnu82DRK4Ex53vj4zrrlxYec41YQZTcO1OG7AWywUkRyLDREobFR%2FZIS0M9TV1ksjpl3pAiJTCOLm1BbQ%2B9Jv1soZiPHgXTqqD%2BVNEBnixmpiI%3D\"&sign_type=\"RSA\""
                 //通过支付宝支付
 //                var orderId = data["id"] as? String
 //                var orderInfo = data["stringToSign"] as String

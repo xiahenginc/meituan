@@ -11,7 +11,7 @@ import UIKit
 class TabIndexWodeViewController: WebBaseViewController {
 
     override func viewDidLoad() {
-        url = "http://www.grwtest.com18.cn/wap/grzx.jsp"
+        url = "http://app.nanmen.com18.cn/wap_ios/"
         
         myWebView = self.webView
         super.viewDidLoad()
