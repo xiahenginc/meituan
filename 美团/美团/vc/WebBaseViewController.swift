@@ -114,12 +114,6 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
             let json = JSON(data)
             if let orderinfo = json["param1"].string{
                 
-//                var pporderinfo = "partner=\"2088021265636683\"&seller_id=\"guorouwang@126.com\"&out_trade_no=\"D143827093805526\"&subject=\"test\"&body=\"test\"&total_fee=\"0.01\"&notify_url=\"http://notify.msp.hk/notify.htm\"&service=\"mobile.securitypay.pay\"&payment_type=\"1\"&_input_charset=\"utf-8\"&it_b_pay=\"30m\"&sign=\"qU3fPl4841gPaVdiPHZaM1ymU1%2BLkzKbJQf3uZxaWVE%2BRWm%2B9llCjT2d8AJanBnu82DRK4Ex53vj4zrrlxYec41YQZTcO1OG7AWywUkRyLDREobFR%2FZIS0M9TV1ksjpl3pAiJTCOLm1BbQ%2B9Jv1soZiPHgXTqqD%2BVNEBnixmpiI%3D\"&sign_type=\"RSA\""
-                //通过支付宝支付
-//                var orderId = data["id"] as? String
-//                var orderInfo = data["stringToSign"] as String
-//                var sign = data["sign"] as String
-                //"\(orderInfo)&sign=\"\(sign)\"&sign_type=\"RSA\""
                 AlipaySDK.defaultService().payOrder(orderinfo, fromScheme: "alipaygrw") { (result: [NSObject: AnyObject]!) -> Void in
                     var resultTxt:String!="failed"
                     var txt:String! = "支付失败"
@@ -142,6 +136,15 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
 
             }
         })
+        //--------------------------------------------------------------------
+        //调用一键分享
+        bridge.registerHandler("sharesdk" ,handler: {
+            data, responseCallback in
+            //MapViewController
+           self.ShowShareMenu()
+        })
+        //--------------------------------------------------------------------
+        
         //--------------------------------------------------------------------
         //调用地图
         bridge.registerHandler("cmv" ,handler: {
@@ -330,6 +333,34 @@ class WebBaseViewController: UIViewController,TencentSessionDelegate {
         let request = NSURLRequest(URL: requestURL!)
         myWebView?.loadRequest(request)
     }
+    
+    /**
+    * 显示分享菜单示例
+    */
+    func ShowShareMenu() {
+        
+        //1.创建分享参数
+        var shareParames = NSMutableDictionary()
+        shareParames.SSDKSetupShareParamsByText("分享内容",
+            images : UIImage(named: "shareImg.png"),
+            url : NSURL(string:"http://mob.com"),
+            title : "分享标题",
+            type : SSDKContentType.Auto)
+        //2.进行分享
+        ShareSDK.showShareActionSheet(self.view, items: nil, shareParams: shareParames) { (state : SSDKResponseState, platformType : SSDKPlatformType, userdata : [NSObject : AnyObject]!, contentEnity : SSDKContentEntity!, error : NSError!, Bool end) -> Void in
+            
+            switch state{
+                
+            case SSDKResponseState.Success: println("分享成功")
+            case SSDKResponseState.Fail:    println("分享失败,错误描述:\(error)")
+            case SSDKResponseState.Cancel:  println("分享取消")
+                
+            default:
+                break
+            }
+        }
+    }
+
 
     /*
     // MARK: - Navigation

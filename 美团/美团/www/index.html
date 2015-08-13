@@ -26,6 +26,8 @@
                <br/>
                <button id="callmapview" class="button  button-full button-large button-positive">调用本地地图</button>
                </br>
+               <button id="callsharesdk" class="button  button-full button-large button-positive">调用分享功能</button>
+               </br>
                <button id="getcurrentlocation" class="button  button-full button-large button-positive">获取当前地图坐标</button>
 			   获取当前坐标为：<div id="cotxt"></div>
 			   </br>
@@ -162,6 +164,16 @@
                       divtxt.innerText = jsonobj.param2
                       })
                }
+               /*调用分享功能*/
+               var btncmv = document.getElementById('callsharesdk')
+               btncmv.onclick = function(e) {
+               e.preventDefault();
+               bridge.callHandler('sharesdk',createjsonreq('req','',''), function responseCallback(jsonobj) {
+                                  //  var divtxt = document.getElementById('fromswift')
+                                  //   divtxt.innerText = jsonobj.param2
+                                  })
+               }
+                                           
                /*调用地图*/
                var btncmv = document.getElementById('callmapview')
                btncmv.onclick = function(e) {
