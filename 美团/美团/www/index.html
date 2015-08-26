@@ -92,7 +92,7 @@
                var button = document.getElementById('callwxautologin')
                button.onclick = function(e) {
                e.preventDefault();
-               bridge.callHandler('wxautologin',createjsonreq('req','grwweb.xiaheng.net','wx53638f36dd87415a'),function responseCallback(jsonobj) {
+               bridge.callHandler('wxautologin',createjsonreq('req','grwweb.xiaheng.net','wx388f804d2a9cb9b4'),function responseCallback(jsonobj) {
                                   var divtxt = document.getElementById('wxautologinresult')
                                   divtxt.innerText =  jsonobj.param1 + ":" + jsonobj.param2
                                   })
@@ -168,7 +168,8 @@
                var btncmv = document.getElementById('callsharesdk')
                btncmv.onclick = function(e) {
                e.preventDefault();
-               bridge.callHandler('sharesdk',createjsonreq('req','',''), function responseCallback(jsonobj) {
+               var param1 = '{"title":"这是个测试","content":"这是内容","url":"http://www.guorouwang.com"}';
+               bridge.callHandler('sharesdk',createjsonreq('req',param1,''), function responseCallback(jsonobj) {
                                   //  var divtxt = document.getElementById('fromswift')
                                   //   divtxt.innerText = jsonobj.param2
                                   })

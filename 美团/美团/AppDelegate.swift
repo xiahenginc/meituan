@@ -200,7 +200,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool{
-        if url.scheme == "wx8ff03d60decfa26a" {
+        if url.scheme == "wx388f804d2a9cb9b4" {
             return WXApi.handleOpenURL(url, delegate: self)
         }
         else if url.scheme == "tencent1104714921" {
@@ -210,7 +210,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        if url.scheme == "wx8ff03d60decfa26a" {
+        if url.scheme == "wx388f804d2a9cb9b4" {
             return WXApi.handleOpenURL(url, delegate: self)
         }
         else if url.scheme == "tencent1104714921" {
@@ -253,12 +253,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         *  在此事件中写入连接代码。第四个参数则为配置本地社交平台时触发，根据返回的平台类型来配置平台信息。
         *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
         */
-        ShareSDK.registerApp("997acbb3fffd",
+        ShareSDK.registerApp("9117123bad18",
             activePlatforms : [
-                SSDKPlatformType.TypeTencentWeibo.rawValue,
-                SSDKPlatformType.TypeSMS.rawValue,
+                SSDKPlatformType.TypeSinaWeibo.rawValue,
                 SSDKPlatformType.TypeWechat.rawValue,
-                SSDKPlatformType.TypeQQ.rawValue],
+                SSDKPlatformType.SubTypeQZone.rawValue,
+                SSDKPlatformType.SubTypeQQFriend.rawValue],
             onImport: {(platform : SSDKPlatformType) -> Void in
                 switch platform
                 {
@@ -273,27 +273,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
             onConfiguration: {(platform : SSDKPlatformType,appInfo : NSMutableDictionary!) -> Void in
                 switch platform
                 {
-                    
+                case SSDKPlatformType.TypeSinaWeibo:
+                    //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                    appInfo.SSDKSetupSinaWeiboByAppKey("4117424136",
+                        appSecret : "37ae80802aff17306dc3267244e4f9e1",
+                        redirectUri : "",
+                        authType : SSDKAuthTypeBoth)
+                    break
                 case SSDKPlatformType.TypeWechat:
                     //设置微信应用信息
-                    appInfo.SSDKSetupWeChatByAppId("wx4868b35061f87885", appSecret: "64020361b8ec4c99936c0e3999a9f249")
-                    break
-                    
-                case SSDKPlatformType.TypeTencentWeibo:
-                    //设置腾讯微博应用信息，其中authType设置为只用Web形式授权
-                    appInfo.SSDKSetupTencentWeiboByAppKey("801307650",
-                        appSecret : "ae36f4ee3946e1cbb98d6965b0b2ff5c",
-                        redirectUri : "http://www.sharesdk.cn")
+                    appInfo.SSDKSetupWeChatByAppId("wx388f804d2a9cb9b4", appSecret: "b139299de10afe65ddf8947dd31e915c")
                     break
                     
                     
                 case SSDKPlatformType.TypeQQ:
                     //设置QQ应用信息
-                    appInfo.SSDKSetupQQByAppId("100371282",
-                        appKey : "aed9b0303e3ed1e27bae87c33761161d",
-                        authType : SSDKAuthTypeWeb)
+                    appInfo.SSDKSetupQQByAppId("1104714921",
+                        appKey : "DT7VkRfm2n6Efe54",
+                        authType : SSDKAuthTypeBoth)
                     break
-                    
+                case SSDKPlatformType.SubTypeQQFriend:
+                    appInfo.SSDKSetupQQByAppId("1104714921",
+                        appKey : "DT7VkRfm2n6Efe54",
+                        authType : SSDKAuthTypeBoth)
+                    break
+                case SSDKPlatformType.SubTypeQZone:
+                    appInfo.SSDKSetupQQByAppId("1104714921",
+                        appKey : "DT7VkRfm2n6Efe54",
+                        authType : SSDKAuthTypeBoth)
+//                    appInfo.connectQZoneWithAppKey("1104714921",
+//                        appKey : "DT7VkRfm2n6Efe54",
+//                        qqApiInterfaceCls : QQApiInterface.classForCoder(),
+//                        tencentOAuthCls:TencentOAuth.classForCoder())
+//                    break
+
                 default:
                     break
                 }

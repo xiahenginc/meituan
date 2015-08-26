@@ -24,6 +24,16 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
+			<string>qq</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>QQ41D89CA9</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
 			<string>tencentopenapi</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
@@ -37,7 +47,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx8ff03d60decfa26a</string>
+				<string>wx388f804d2a9cb9b4</string>
 			</array>
 		</dict>
 		<dict>
@@ -46,6 +56,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>alipaygrw</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb4117424136</string>
 			</array>
 		</dict>
 	</array>
